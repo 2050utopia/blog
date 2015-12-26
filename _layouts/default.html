@@ -1,89 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="author" content="zhenglingxiao">
 
     <title>
-      {{ page.title }} &middot; Primer
+        {{ page.title }} &middot; Coture
     </title>
 
     <link rel="stylesheet" href="{{ site.baseurl }}/css/blog.css">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/img/apple-touch-icon-precomposed.png">
     <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
-  </head>
-  <body>
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/img/apple-touch-icon-precomposed.png">
+</head>
 
-    <header class="masthead">
-      <div class="container">
-        <a href="{{ site.baseurl }}/" class="masthead-logo">
-          <span class="mega-octicon octicon-mark-github"></span>
-          Primer
-        </a>
+<body>
 
-        <nav class="masthead-nav">
-          <a {% if page.layout == "page" %}class="active"{% endif %} href="{{ site.baseurl }}/scaffolding">Docs</a>
-          <a {% if page.title == "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a>
-          <a href="{{ site.github.repo }}" target="_blank">GitHub</a>
-          <a href="{{ site.github.repo }}/blob/master/README.md#install" target="_blank">Install</a>
-        </nav>
-      </div>
-    </header>
-
-    {% if page.title == "Home" %}
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Primer</h1>
-          <p>The CSS toolkit and guidelines that power GitHub.</p>
-
-          <a href="{{ site.baseurl }}/scaffolding/" class="btn btn-reverse">
-            Read the docs
-          </a>
-        </div>
-      </div>
-
-      <div class="container about-that">
-        <div class="columns">
-          <div class="one-third column">
-            <h2>Made at GitHub</h2>
-            <p>Primer is the basecoat of GitHub, made by nerds just like you who share a passion for HTML and CSS.</p>
-          </div>
-          <div class="one-third column">
-            <h2>Open source</h2>
-            <p>Available for use under the MIT license and built with open source projects like SCSS, Jekyll, Grunt, and more.</p>
-          </div>
-          <div class="one-third column">
-            <h2>Build tools</h2>
-            <p>Includes a small Gruntfile for compiling our SCSS, Autoprefixer for vendor prefixes, and Parker for CSS stats.</p>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-
+<div class='site-header'>
     <div class="container">
-      {{ content }}
-
-      <footer class="footer">
-        Copyright GitHub {{ site.time | date: '%Y' }}.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v{{ site.version }}.</strong>
-      </footer>
+        <a href="{{ site.baseurl }}/"><img class="logo" src="{{ site.baseurl }}/images/logo.png"></a>
+        <a class='title' href="{{ site.baseurl }}/">Coture</a>
+        <span class='description right'>{{ site.description }}</span>
     </div>
+</div>
 
-    <script src="{{ site.baseurl }}/js/anchor.min.js"></script>
-    <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
-      anchors.options = {
+<div class="container">
+    {{ content }}
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="{{ site.baseurl }}/about">About</a></li>
+            <li><a href="{{ site.baseurl }}/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="{{ site.baseurl }}/images/avatar_small.png"/>
+
+        <ul class="site-footer-links">
+            <li>© {{ site.time | date: '%Y' }} ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="{{ site.baseurl }}/js/anchor.min.js"></script>
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
         placement: 'left',
         class: 'anchor-link'
-      };
-      anchors.add(selector);
-    </script>
-  </body>
+    };
+    anchors.add(selector);
+</script>
+</body>
 </html>

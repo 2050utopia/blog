@@ -1,30 +1,16 @@
-@charset "UTF-8";
-
 ---
-# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
-# only main files contain this front matter, not partials.
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
-
-/*
- * Primer documentation styles
- * http://primercss.io
- *
- * Released under MIT license. Copyright 2015 GitHub, Inc.
- */
+@charset "utf-8";
 
 //
-// Import Primer itself
+// Import
 //
-
 @import "primer";
-@import "octicons.css";
-@import "markdown";
 @import "anchor";
 @import "syntax";
-
-//
-// Overrides
-//
+@import "markdown";
+@import "octicons.css";
 
 // Global type
 html {
@@ -34,6 +20,13 @@ html {
 body {
   font-family: "Helvetica Neue", $body-font;
   font-size: 1rem;
+}
+
+a {
+  &:hover {
+    color: $brand-blue;
+    text-decoration: none;
+  }
 }
 
 // Make containers responsive
@@ -48,11 +41,9 @@ body {
   overflow: visible;
 }
 
-
 //
 // Custom button
 //
-
 .btn-reverse {
   color: #fff;
   background: none;
@@ -67,31 +58,29 @@ body {
   }
 }
 
-
 //
 // Site header
 //
-
 .masthead {
-  padding-top:    10px;
-  padding-bottom: 10px;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
   background-color: #f5f5f5;
 
   a {
-    color: rgba(255,255,255,.5);
+
 
     &:hover {
-      color: #fff;
+      color: $brand-blue;
       text-decoration: none;
     }
   }
 
   .masthead-logo {
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #333;
 
     .mega-octicon {
@@ -113,19 +102,6 @@ body {
   margin-top: 1rem;
   font-size: 1rem;
 
-  a {
-    display: inline-block;
-
-    &:not(:last-child) {
-      margin-right: 1.25rem;
-    }
-  }
-
-  .active {
-    color: #fff;
-    font-weight: 500;
-  }
-
   @media (max-width: 34em) {
     padding-top: 1rem;
     border-top: .075rem solid rgba(255, 255, 255, 0.25);
@@ -136,67 +112,6 @@ body {
     margin-top: .5rem;
   }
 }
-
-
-//
-// Homepage jumbotron
-//
-
-.jumbotron {
-  margin-top: -2rem;
-  margin-bottom: 3rem;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-  background-color: $brand-blue;
-  font-size: 1.25rem;
-  color: #fff;
-  text-align: center;
-
-  h1 {
-    font-size: 2.5em;
-    font-weight: normal;
-  }
-
-  .btn {
-    padding: .75em 1.15em;
-    font-size: inherit;
-    font-weight: normal;
-    line-height: 1;
-  }
-
-  @media (min-width: 34em) {
-    padding-top: 6rem;
-    padding-bottom: 8rem;
-    font-size: 1.5rem;
-    text-align: left;
-  }
-}
-
-.about-that {
-
-  @media (max-width: 760px) {
-    .column {
-      float: none;
-      width: 100%;
-      margin-bottom: 30px;
-    }
-  }
-
-  p {
-    padding-right: .5rem;
-    color: #555;
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-weight: normal;
-  }
-}
-
-
-//
-// Layout
-//
 
 // Override the default layout to make it stack
 .docs-layout {
@@ -211,7 +126,6 @@ body {
 //
 // Footer
 //
-
 .footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -225,11 +139,9 @@ body {
   }
 }
 
-
 //
 // Side menu
 //
-
 .docs-menu {
   margin-bottom: 1.5rem;
   font-size: 14px;
@@ -239,11 +151,9 @@ body {
   }
 }
 
-
 //
 // Examples
 //
-
 .docs-example {
   position: relative;
   padding: 15px;
@@ -327,21 +237,17 @@ body {
   @extend .lead;
 }
 
-
 //
 // Markdown generated ToC
 //
-
 // Hide the first child li because it's always going to be "Contents".
 #markdown-toc > li:first-child {
   display: none;
 }
 
-
 //
 // Branding colors
 //
-
 .swatch {
   display: inline-block;
   width: 6rem;
@@ -349,12 +255,192 @@ body {
   border-radius: .25rem;
 }
 
-.swatch-blue { background-color: $brand-blue; }
-.swatch-green { background-color: $brand-green; }
-.swatch-red { background-color: $brand-red; }
-.swatch-orange { background-color: $brand-orange; }
-.swatch-purple { background-color: $brand-purple; }
+.swatch-blue {
+  background-color: $brand-blue;
+}
 
-.swatch-gray-light { background-color: $brand-gray-light; }
-.swatch-gray { background-color: $brand-gray; }
-.swatch-gray-dark { background-color: $brand-gray-dark; }
+.swatch-green {
+  background-color: $brand-green;
+}
+
+.swatch-red {
+  background-color: $brand-red;
+}
+
+.swatch-orange {
+  background-color: $brand-orange;
+}
+
+.swatch-purple {
+  background-color: $brand-purple;
+}
+
+.swatch-gray-light {
+  background-color: $brand-gray-light;
+}
+
+.swatch-gray {
+  background-color: $brand-gray;
+}
+
+.swatch-gray-dark {
+  background-color: $brand-gray-dark;
+}
+
+//
+// add by zhenglingxiao
+//
+
+//
+// Post list
+//
+.post-list-container {
+  margin-top: 1.5rem;
+}
+
+.post-list-item {
+  margin-bottom: 60px
+}
+
+.post-list-item-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.post-list-item-meta {
+  color: #999;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.post-list-item-meta-item {
+  display: inline;
+  padding-right: 20px;
+}
+
+.post-list-item-meta-item-title {
+  font-size: 14px;
+}
+
+.post-list-item-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444
+}
+
+//
+// Post list
+//
+.post-title + .markdown-body > p:first-child {
+  @extend .lead;
+}
+
+.post-container {
+  margin-top: 1.5rem;
+
+  @media (max-width: 34em) {
+  }
+}
+
+//
+// Side menu
+//
+.side-menu {
+  margin-top: 1.5rem;
+  font-size: 14px;
+
+  @media (min-width: 34em) {
+  }
+}
+
+//
+// site header
+//
+.site-header {
+  height: 48px;
+  line-height: 48px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+
+  a {
+    color: black;
+
+    &:hover {
+      color: $brand-blue;
+      text-decoration: none;
+    }
+  }
+}
+
+.site-header:before {
+  display: table;
+  content: "";
+}
+
+.site-header:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.site-header .logo {
+  top: 10px;
+  height: 28px;
+  position: absolute;
+}
+
+.site-header .title {
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.site-header .description {
+  font-size: 14px;
+}
+
+//
+// site footer
+//
+.site-footer {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #767676;
+  border-top: 1px solid #eee;
+}
+
+.site-footer:before {
+  display: table;
+  content: "";
+}
+
+.site-footer:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.site-footer img {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  margin-left: -12px;
+  height: 24px;
+}
+
+.site-footer-links {
+  margin: 0;
+  list-style: none;
+}
+
+.site-footer-links li {
+  display: inline-block;
+  line-height: 16px;
+}
+
+.site-footer-links li + li {
+  margin-left: 10px;
+}

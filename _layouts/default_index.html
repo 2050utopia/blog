@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="columns docs-layout">
+
+    <div class="three-fourths column">
+        <div class="post-list-container">
+            {{ content }}
+        </div>
+    </div>
+
+    <div class="one-fourth column">
+        <nav class="menu side-menu">
+            <a class="menu-item {% if page.title == 'all' %}selected{% endif %}" href="{{ site.baseurl }}/">
+                All（ {{ site.posts | size }} ）
+            </a>
+            {% if post.categories != empty %}
+            {% for category in site.categories %}
+            <a class="menu-item {% if page.title == category.first %}selected{% endif %}" href="/categories/{{ category | first }}/">
+                {{ category | first }}（ {{ category | last | size }} ）
+            </a>
+            {% endfor %}
+            {% endif %}
+        </nav>
+    </div>
+</div>
