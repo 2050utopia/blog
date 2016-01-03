@@ -5,131 +5,149 @@
     <description>description</description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 Dec 2015 18:06:52 +0800</pubDate>
-    <lastBuildDate>Sat, 26 Dec 2015 18:06:52 +0800</lastBuildDate>
+    <pubDate>Sun, 03 Jan 2016 22:12:50 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Jan 2016 22:12:50 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Test Blog 2</title>
-        <description>&lt;p&gt;在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+        <description>&lt;p&gt;54321在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SXHKD_SHELL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;shell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&lt;!-- more --&gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;ls /system
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/zhenglingxiao
+grep -r &lt;span class=&quot;s2&quot;&gt;&quot;server_ip&quot;&lt;/span&gt; src&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;ls /system
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/zhenglingxiao
+grep -r &lt;span class=&quot;s2&quot;&gt;&quot;server_ip&quot;&lt;/span&gt; src
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;ubuntu：14.04  &lt;/li&gt;
-  &lt;li&gt;vsftpd：3.0.2  &lt;/li&gt;
-  &lt;li&gt;java：1.8.0_60  &lt;/li&gt;
-  &lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;jenkins&quot;&gt;一、安装配置Jenkins&lt;/h4&gt;
+&lt;h4&gt;一、安装配置Jenkins&lt;/h4&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
-  &lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
-  &lt;li&gt;点击右侧”系统管理”后选择”管理插件”，再选择”可选插件”选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
-  &lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0_60，然后设置JAVA_HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
-  &lt;li&gt;点击右侧”系统管理”后选择”系统设置”，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA_HOME”，“别名”可以随便写，“JAVA_HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
-  &lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;jenkinsssh&quot;&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
 
 &lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
-  &lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
-  &lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
-  &lt;li&gt;这一步非常重要，使用以下命令更改id_rsa的权限。修改完成后，id_rsa的权限为：
-- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id_rsa
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-sudo chmod 600 id_rsa
-sudo chgrp jenkins id_rsa
-sudo chown jenkins id_rsa
-&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;android-sdk-tools&quot;&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
-  &lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
-  &lt;li&gt;添加ANDROID_HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID_HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;jenkins-1&quot;&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
-  &lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
-  &lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
-  &lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;gradle&quot;&gt;五、初始化下载gradle&lt;/h2&gt;
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
- cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
- ./gradlew clean # 开始初始化下载gradle
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;jenkins-2&quot;&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
-第一个参数代表分钟，取值范围：0~59&lt;br /&gt;
-第二个参数代表的是小时，取值范围：0~23&lt;br /&gt;
-第三个参数代表的是天，取值范围：1~31&lt;br /&gt;
-第四个参数代表的是月，取值范围：1~12&lt;br /&gt;
-第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br /&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
 *代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
-  &lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build_release目录下已经有相应的子目录和apk了&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-APP_NAME=test-nightly
-DATE=`date &quot;+%y-%m-%d&quot;`
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
 bash $WORKSPACE/gradlew clean build # 编译apk
-DIR=~/build_release/${APP_NAME}/$DATE
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
 if [ ! -d $DIR ]; then
 mkdir -p $DIR
 fi
-mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP_NAME}-${BUILD_NUMBER}.apk
-&lt;/code&gt;&lt;/li&gt;
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;ftp&quot;&gt;七、搭建FTP服务器&lt;/h2&gt;
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
 sudo apt-get install vsftpd
 &lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
 sudo service vsftpd restart
 &lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;新建文件/etc/vsftpd.chroot_list和/etc/vsftpd.user_list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
-     # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
-     local_root=/var/lib/jenkins/build_release/
-     # 设置只有/etc/vsftpd.user_list中的用户才有登录FTP的权限
-     userlist_enable=yes
-     userlist_deny=NO
-     userlist_file=/etc/vsftpd.user_list
-     # 设置/etc/vsftpd.chroot_list中的用户在登陆FTP后只能查看本目录下的子目录和文件
-     chroot_list_enable=YES
-     chroot_list_file=/etc/vsftpd.chroot_list&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Thu, 24 Dec 2015 00:00:00 +0800</pubDate>
@@ -143,130 +161,1187 @@ sudo service vsftpd restart
     
       <item>
         <title>Test Blog</title>
-        <description>&lt;p&gt;在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+        <description>&lt;p&gt;在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
 
-&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&lt;!-- more --&gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;ubuntu：14.04  &lt;/li&gt;
-  &lt;li&gt;vsftpd：3.0.2  &lt;/li&gt;
-  &lt;li&gt;java：1.8.0_60  &lt;/li&gt;
-  &lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;jenkins&quot;&gt;一、安装配置Jenkins&lt;/h3&gt;
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
-  &lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
-  &lt;li&gt;点击右侧”系统管理”后选择”管理插件”，再选择”可选插件”选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
-  &lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0_60，然后设置JAVA_HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
-  &lt;li&gt;点击右侧”系统管理”后选择”系统设置”，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA_HOME”，“别名”可以随便写，“JAVA_HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
-  &lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;jenkinsssh&quot;&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
 
 &lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
-  &lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
-  &lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
-  &lt;li&gt;这一步非常重要，使用以下命令更改id_rsa的权限。修改完成后，id_rsa的权限为：
-- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id_rsa
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-sudo chmod 600 id_rsa
-sudo chgrp jenkins id_rsa
-sudo chown jenkins id_rsa
-&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;android-sdk-tools&quot;&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
-  &lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
-  &lt;li&gt;添加ANDROID_HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID_HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;jenkins-1&quot;&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
-  &lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
-  &lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
-  &lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;gradle&quot;&gt;五、初始化下载gradle&lt;/h2&gt;
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
- cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
- ./gradlew clean # 开始初始化下载gradle
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;jenkins-2&quot;&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
-第一个参数代表分钟，取值范围：0~59&lt;br /&gt;
-第二个参数代表的是小时，取值范围：0~23&lt;br /&gt;
-第三个参数代表的是天，取值范围：1~31&lt;br /&gt;
-第四个参数代表的是月，取值范围：1~12&lt;br /&gt;
-第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br /&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
 *代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
-  &lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build_release目录下已经有相应的子目录和apk了&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-APP_NAME=test-nightly
-DATE=`date &quot;+%y-%m-%d&quot;`
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
 bash $WORKSPACE/gradlew clean build # 编译apk
-DIR=~/build_release/${APP_NAME}/$DATE
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
 if [ ! -d $DIR ]; then
 mkdir -p $DIR
 fi
-mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP_NAME}-${BUILD_NUMBER}.apk
-&lt;/code&gt;&lt;/li&gt;
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;ftp&quot;&gt;七、搭建FTP服务器&lt;/h2&gt;
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
 sudo apt-get install vsftpd
 &lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
 sudo service vsftpd restart
 &lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;新建文件/etc/vsftpd.chroot_list和/etc/vsftpd.user_list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
-     # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
-     local_root=/var/lib/jenkins/build_release/
-     # 设置只有/etc/vsftpd.user_list中的用户才有登录FTP的权限
-     userlist_enable=yes
-     userlist_deny=NO
-     userlist_file=/etc/vsftpd.user_list
-     # 设置/etc/vsftpd.chroot_list中的用户在登陆FTP后只能查看本目录下的子目录和文件
-     chroot_list_enable=YES
-     chroot_list_file=/etc/vsftpd.chroot_list&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;222在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SXHKD_SHELL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;shell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
         <link>http://yourdomain.com/test/2015/12/18/welcome-to-jekyll.html</link>
         <guid isPermaLink="true">http://yourdomain.com/test/2015/12/18/welcome-to-jekyll.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 18 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/11/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 18 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/11/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/18/welcome-to-jekyll.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;22在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 14 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/11/14/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/14/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;22在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 14 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/11/14/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/14/welcome-to-jekyll.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;22在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 18 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/01/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/01/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;22在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 18 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2015/01/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/01/18/welcome-to-jekyll.html</guid>
+        
+        
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Blog</title>
+        <description>&lt;p&gt;22在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
+
+&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。&amp;lt;!-- more --&amp;gt;本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ubuntu：14.04&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;vsftpd：3.0.2&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;java：1.8.0_60&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;jenkins：1.609.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问&lt;/li&gt;
+&lt;li&gt;安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表&lt;/li&gt;
+&lt;li&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60&lt;/li&gt;
+&lt;li&gt;点击底部保存，保存所有修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;二、为Jenkins添加ssh私钥&lt;/h2&gt;
+
+&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先准备好可以在git上拉代码的私钥id_rsa&lt;/li&gt;
+&lt;li&gt;在/var/lib/jenkins目录下新建.ssh文件夹&lt;/li&gt;
+&lt;li&gt;将id_rsa复制到/var/lib/jenkins/.ssh&lt;/li&gt;
+&lt;li&gt;这一步非常重要，使用以下命令更改id&lt;em&gt;rsa的权限。修改完成后，id&lt;/em&gt;rsa的权限为：
+- r w - - - - - - - 1 jenkins jenkins 1675 Oct 13  2014 /var/lib/jenkins/.ssh/id&lt;em&gt;rsa
+```
+sudo chmod 600 id&lt;/em&gt;rsa
+sudo chgrp jenkins id&lt;em&gt;rsa
+sudo chown jenkins id&lt;/em&gt;rsa
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;三、下载配置Android SDK Tools&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录&lt;/li&gt;
+&lt;li&gt;启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述&lt;/li&gt;
+&lt;li&gt;添加ANDROID&lt;em&gt;HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID&lt;/em&gt;HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;四、创建配置一个Jenkins编译项目&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。&lt;/li&gt;
+&lt;li&gt;选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的&lt;/li&gt;
+&lt;li&gt;点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle&lt;/li&gt;
+&lt;li&gt;点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;五、初始化下载gradle&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo su jenkins # 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码
+cd /var/lib/jenkins/jobs/test_night/workspace # 进入源码目录
+./gradlew clean # 开始初始化下载gradle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;六、完善Jenkins自动编译配置&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割
+第一个参数代表分钟，取值范围：0~59&lt;br&gt;
+第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
+第三个参数代表的是天，取值范围：1~31&lt;br&gt;
+第四个参数代表的是月，取值范围：1~12&lt;br&gt;
+第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
+*代表任意值，H代表该参数值域内的任意值&lt;/li&gt;
+&lt;li&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build&lt;em&gt;release目录下已经有相应的子目录和apk了&lt;br&gt;
+```
+APP&lt;/em&gt;NAME=test-nightly
+DATE=&lt;code&gt;date &amp;quot;+%y-%m-%d&amp;quot;&lt;/code&gt;
+bash $WORKSPACE/gradlew clean build # 编译apk
+DIR=~/build&lt;em&gt;release/${APP&lt;/em&gt;NAME}/$DATE
+if [ ! -d $DIR ]; then
+mkdir -p $DIR
+fi
+mv $WORKSPACE/app/build/outputs/apk/app-release.apk $DIR/${APP&lt;em&gt;NAME}-${BUILD&lt;/em&gt;NUMBER}.apk
+```&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;七、搭建FTP服务器&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd&lt;br&gt;
+&lt;code&gt;
+sudo apt-get install vsftpd
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行以下命令判断vsftpd是否安装成功并且已经启动&lt;br&gt;
+&lt;code&gt;
+sudo service vsftpd restart
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息
+    # 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录
+    local&lt;em&gt;root=/var/lib/jenkins/build&lt;/em&gt;release/
+    # 设置只有/etc/vsftpd.user&lt;em&gt;list中的用户才有登录FTP的权限
+    userlist&lt;/em&gt;enable=yes
+    userlist&lt;em&gt;deny=NO
+    userlist&lt;/em&gt;file=/etc/vsftpd.user&lt;em&gt;list
+    # 设置/etc/vsftpd.chroot&lt;/em&gt;list中的用户在登陆FTP后只能查看本目录下的子目录和文件
+    chroot&lt;em&gt;list&lt;/em&gt;enable=YES
+    chroot&lt;em&gt;list&lt;/em&gt;file=/etc/vsftpd.chroot_list&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 18 Dec 2013 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/test/2013/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2013/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
         
         
         <category>Test</category>
