@@ -3,10 +3,10 @@
   <channel>
     <title>Your awesome title</title>
     <description>description</description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jan 2016 22:12:50 +0800</pubDate>
-    <lastBuildDate>Sun, 03 Jan 2016 22:12:50 +0800</lastBuildDate>
+    <link>http://yourdomain.com/blog/</link>
+    <atom:link href="http://yourdomain.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 03 Jan 2016 22:49:27 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Jan 2016 22:49:27 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -151,8 +151,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Thu, 24 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/android/2015/12/24/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/android/2015/12/24/welcome-to-jekyll.html</guid>
+        <link>http://yourdomain.com/blog/android/2015/12/24/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/android/2015/12/24/welcome-to-jekyll.html</guid>
         
         
         <category>Android</category>
@@ -283,8 +283,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
         
         
         <category>Test</category>
@@ -416,8 +416,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Fri, 18 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/12/18/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/12/18/welcome-to-jekyll.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/12/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/12/18/welcome-to-jekyll.html</guid>
         
         
         <category>Test</category>
@@ -548,8 +548,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 18 Nov 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/11/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/11/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/11/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
         
         
         <category>Test</category>
@@ -680,8 +680,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 18 Nov 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/11/18/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/18/welcome-to-jekyll.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/11/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/11/18/welcome-to-jekyll.html</guid>
         
         
         <category>Test</category>
@@ -812,8 +812,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Sat, 14 Nov 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/11/14/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/14/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/11/14/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/11/14/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
         
         
         <category>Test</category>
@@ -944,8 +944,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Sat, 14 Nov 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/11/14/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/11/14/welcome-to-jekyll.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/11/14/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/11/14/welcome-to-jekyll.html</guid>
         
         
         <category>Test</category>
@@ -1076,8 +1076,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Sun, 18 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/01/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/01/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/01/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/01/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
         
         
         <category>Test</category>
@@ -1208,8 +1208,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Sun, 18 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2015/01/18/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2015/01/18/welcome-to-jekyll.html</guid>
+        <link>http://yourdomain.com/blog/test/2015/01/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2015/01/18/welcome-to-jekyll.html</guid>
         
         
         <category>Test</category>
@@ -1340,8 +1340,8 @@ sudo service vsftpd restart
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 18 Dec 2013 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/test/2013/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/test/2013/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
+        <link>http://yourdomain.com/blog/test/2013/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/test/2013/12/18/welcome-to-jekyll%E5%89%AF%E6%9C%AC.html</guid>
         
         
         <category>Test</category>
