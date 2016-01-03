@@ -1,40 +1,12 @@
 ---
 layout: post
-title: Test Blog 2
-category: Android
+title: Test Blog
+category: Test
 ---
 
-54321在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。
+22在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。
 
-``` sh
-export SXHKD_SHELL=shell
 ```
-
-{% highlight java linenos %}
-public void main() {
-    System.out.print("Hello");System.out.print("Hello");System.out.print("Hello");System.out.print("Hello");
-}
-{% endhighlight %}
-
-{% highlight sh %}
-ls /system
-cd /home/zhenglingxiao
-grep -r "server_ip" src
-{% endhighlight %}
-
-``` java
-public void main() {
-    System.out.print("Hello");System.out.print("Hello");System.out.print("Hello");System.out.print("Hello");
-}
-```
-
-``` sh
-ls /system
-cd /home/zhenglingxiao
-grep -r "server_ip" src
-```
-
-``` html
 <!DOCTYPE html>
 <html lang="en">
   ...
@@ -50,7 +22,7 @@ grep -r "server_ip" src
 * java：1.8.0_60  
 * jenkins：1.609.3
 
-####一、安装配置Jenkins
+###一、安装配置Jenkins
 
 1. 从[官网](https://jenkins-ci.org)下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问
 2. 安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功

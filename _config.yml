@@ -15,5 +15,10 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 excerpt_separator: "<!-- more -->"
+
+# pagination
+gems: [jekyll-paginate]
+paginate: 2
+paginate_path: "/page:num/"

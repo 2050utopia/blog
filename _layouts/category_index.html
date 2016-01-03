@@ -2,9 +2,9 @@
 layout: default_index
 ---
 {% for post in site.categories.[page.category] %}
-<div class="post-list-item">
-    <h2 class="post-list-item-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <ul class="post-list-item-meta">
+<div class="post-list-item markdown-body">
+    <h1 class="post-list-item-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <ul class="post-list-item-meta no-list">
         <li class="post-list-item-meta-item">
             <span class="octicon octicon-calendar">
                 <span class="post-list-item-meta-item-title">{{ post.date | date: "%B %-d, %Y" }}</span>
@@ -16,7 +16,7 @@ layout: default_index
             </span>
         </li>
     </ul>
-    <div class="post-list-item-body markdown-body">
+    <div class="post-list-item-body">
         {{ post.excerpt }}
     </div>
 </div>
