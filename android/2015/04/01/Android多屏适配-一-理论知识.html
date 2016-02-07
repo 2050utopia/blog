@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        Android多屏适配（一）：理论知识 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h1 class="post-title">Android多屏适配（一）：理论知识</h1>
+        <div><h3>一、每英寸点数量（dpi）与每英寸像素量（ppi）</h3>
+
+<p>Android多屏适配同时受到屏幕尺寸（屏幕对角线长度，单位：英寸）与屏幕分辨率的影响，即屏幕密度。屏幕密度的常见度量单位有dpi（dot per inch）与ppi（pixel per inch），两者的区别在于dpi用于打印领域，而ppi用于图像领域。在日常使用中我们经常混用了dpi和ppi，在很多情况下我们使用dpi时其实指的是ppi。为了更好地理解以下内容，可先阅读这篇博文（<a href="http://blog.jeswang.org/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/">PPI vs DPI 有什么区别</a>）。在Android系统中dpi和ppi具有不同的含义。现在假设分辨率宽度为w；分辨率高度为h；屏幕尺寸为ss；则ppi计算公式如下：</p>
+
+<!-- more -->
+
+<p>$$ppi=\frac{\sqrt{w^2 + h^2}}{ss}$$但是通过此公式算出的ppi与通过Android API获取的dpi存在一定差异，以Nexus5（分辨率：1920 x 1080，4.95英寸）为例，通过上述公式得到的ppi为445，而通过API得到的dpi为480。通过Android Studio创建模拟器，调整不同的分辨率及屏幕尺寸进行验证后得到下表：  </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left"></th>
+<th style="text-align: left">Actual ppi</th>
+<th style="text-align: left">API dpi</th>
+<th style="text-align: left">API density</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">ldpi</td>
+<td style="text-align: left">0 ~ 140</td>
+<td style="text-align: left">120</td>
+<td style="text-align: left">0.75</td>
+</tr>
+<tr>
+<td style="text-align: left">mdpi</td>
+<td style="text-align: left">140 ~ 186.5</td>
+<td style="text-align: left">160</td>
+<td style="text-align: left">1.0</td>
+</tr>
+<tr>
+<td style="text-align: left">tvdpi</td>
+<td style="text-align: left">186.5 ~ 226.5</td>
+<td style="text-align: left">213</td>
+<td style="text-align: left">1.33</td>
+</tr>
+<tr>
+<td style="text-align: left">hdpi</td>
+<td style="text-align: left">226.5 ~ 280</td>
+<td style="text-align: left">240</td>
+<td style="text-align: left">1.5</td>
+</tr>
+<tr>
+<td style="text-align: left">xhdpi</td>
+<td style="text-align: left">280 ~ 360</td>
+<td style="text-align: left">320</td>
+<td style="text-align: left">2.0</td>
+</tr>
+<tr>
+<td style="text-align: left">400dpi</td>
+<td style="text-align: left">360 ~ 440</td>
+<td style="text-align: left">400</td>
+<td style="text-align: left">2.5</td>
+</tr>
+<tr>
+<td style="text-align: left">xxhdpi</td>
+<td style="text-align: left">440 ~ 520</td>
+<td style="text-align: left">480</td>
+<td style="text-align: left">3.0</td>
+</tr>
+<tr>
+<td style="text-align: left">560dpi</td>
+<td style="text-align: left">520 ~ 600</td>
+<td style="text-align: left">560</td>
+<td style="text-align: left">3.5</td>
+</tr>
+<tr>
+<td style="text-align: left">xxxhdpi</td>
+<td style="text-align: left">600 ~ 680</td>
+<td style="text-align: left">640</td>
+<td style="text-align: left">4.0</td>
+</tr>
+</tbody></table>
+
+<p>从上表可知，Android系统的dpi是对应某个范围的ppi，范围界限是相邻两个dpi的中值。例如ldpi与mdpi的中值为140，那么ppi低于140的设备就属于ldpi，ppi高于140的设备就属于mdpi。这就解释了Nexus5的实际ppi为445但却属于xxhdpi的现象。个人推测由于各个Android设备厂商的屏幕标准不统一，Android系统为了能够兼容各个设备而采用了这种机制。dpi中的d（dot）在物理屏幕上可以理解为一个光学元件（通常由RGB组成）。以mdpi为例，当一个设备的ppi为160时，那么其dpi也为160，这时屏幕将会使用一个光学元件来显示一个像素。当一个设备的ppi为150时，那么其dpi依旧为160，但是这时屏幕将会使用16个光学元件来显示15个像素，即160 dot比150 pixel。在实际开发中，Android系统的数值换算使用的是dpi，而非ppi。所以不必太纠结于dpi与ppi的区别。  </p>
+
+<p>值得注意的是，上表中有三个奇葩的dpi，分别是tvdpi、400dpi和560dpi。第一代Nexus7使用tvdpi，魅族MX3使用400dpi，Nexus6使用560dpi。目前使用ldpi的设备已经是古董机了，基本可以忽略此类设备。优先兼容普遍dpi类型的设备，其次建议兼容400dpi和560dpi的设备，tvdpi的适配工作视实际情况而定。</p>
+
+<h3>二、密度独立像素（dp/dip）与缩放独立像素（sp）</h3>
+
+<p>dp/dip的全称是：density-independent pixel，中文有时也称为设备独立像素，通常用于UI布局。sp的全称是：scale-independent pixels，通常用于指定文字大小。dp与sp是Google推荐的度量单位，单位px（像素）出于多屏适配的原因不推荐使用。dp的定义是：1dp等于160dpi屏幕上的1px，则dp与px的换算公式为：$$px=dp*\frac{dpi}{160}$$sp的定义与dp类似，指的是：1sp等于160dpi屏幕上的1px乘以系统的文本缩放系数，文本缩放系数可以在“设置应用”的“显示”条目中的“字体大小”项里更改。接着通过实例说明为什么使用dp和sp，而不用px。假设要实现一个如图的界面：  </p>
+
+<p><img src="/images/2015/04/01/01.png" alt="image">   </p>
+
+<p>使用px的布局示例如下：  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"horizontal"</span>
+    <span class="na">android:background=</span><span class="s">"@android:color/darker_gray"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;ImageView</span>
+        <span class="na">android:layout_width=</span><span class="s">"100px"</span>
+        <span class="na">android:layout_height=</span><span class="s">"100px"</span>
+        <span class="na">android:src=</span><span class="s">"@drawable/ic_zlx"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;TextView</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"昵称：zlxRX"</span>
+        <span class="na">android:textSize=</span><span class="s">"18px"</span>
+        <span class="na">android:textColor=</span><span class="s">"@android:color/white"</span>
+        <span class="na">android:background=</span><span class="s">"@android:color/holo_orange_dark"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div>
+<p>在mdpi和xhdpi的模拟器中分别得到如下界面。设置相同像素值的宽高，xhdpi中的图片只有mdpi中的一半大小。这是因为xhdpi的dpi值为320，而mdpi的dpi值为160。从上文可知，dpi对应的ppi是一个范围值，为了便于理解，假设此时dpi和ppi的值相同。那么mdpi要显示一个160像素x160像素的图像需要1英寸x1英寸的区域（160像素 / 1英寸 ＝ 160ppi），而xhdpi只需要0.5英寸x0.5英寸的区域（160像素 / 0.5英寸 ＝ 320ppi）。  </p>
+
+<p><img src="/images/2015/04/01/02.png" alt="image">  </p>
+
+<p>如果我们使用dp和sp进行布局，则在mdpi和xhdpi的模拟器中分别得到如下界面。  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"horizontal"</span>
+    <span class="na">android:background=</span><span class="s">"@android:color/darker_gray"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;ImageView</span>
+        <span class="na">android:layout_width=</span><span class="s">"100dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"100dp"</span>
+        <span class="na">android:src=</span><span class="s">"@drawable/ic_zlx"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;TextView</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"昵称：zlxRX"</span>
+        <span class="na">android:textSize=</span><span class="s">"18sp"</span>
+        <span class="na">android:textColor=</span><span class="s">"@android:color/white"</span>
+        <span class="na">android:background=</span><span class="s">"@android:color/holo_orange_dark"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div>
+<p><img src="/images/2015/04/01/03.png" alt="image">  </p>
+
+<p>当我们使用dp和sp时系统会自动根据当前设备的dpi将dp和sp转换为px后再布局，保证我们的应用程序在不同dpi的设备上能有比较相近的显示效果。Google推荐四种字体大小：12sp，14sp，16sp，18sp。当系统的文本缩放系数为1时，sp与px的转换关系如下表所示。</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left"></th>
+<th style="text-align: left">mdpi</th>
+<th style="text-align: left">hdpi</th>
+<th style="text-align: left">xhdpi</th>
+<th style="text-align: left">xxhdpi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">12sp</td>
+<td style="text-align: left">12px</td>
+<td style="text-align: left">18px</td>
+<td style="text-align: left">24px</td>
+<td style="text-align: left">36px</td>
+</tr>
+<tr>
+<td style="text-align: left">14sp</td>
+<td style="text-align: left">14px</td>
+<td style="text-align: left">21px</td>
+<td style="text-align: left">28px</td>
+<td style="text-align: left">42px</td>
+</tr>
+<tr>
+<td style="text-align: left">16sp</td>
+<td style="text-align: left">16px</td>
+<td style="text-align: left">24px</td>
+<td style="text-align: left">32px</td>
+<td style="text-align: left">48px</td>
+</tr>
+<tr>
+<td style="text-align: left">18sp</td>
+<td style="text-align: left">18px</td>
+<td style="text-align: left">27px</td>
+<td style="text-align: left">36px</td>
+<td style="text-align: left">54px</td>
+</tr>
+</tbody></table>
+
+<p>虽然在开发中推荐使用sp，但UX工程师在设计或切图标注时一般使用的还是px，上表的意义在于可以与UX工程师约定在APP中只使用若干种字号，并结合上表将切图标注中以px为单位的字号转换为代码中以sp为单位的字号。</p>
+</div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+</body>
+</html>

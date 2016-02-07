@@ -15,7 +15,7 @@
     <!-- Favicons -->
     <link rel="icon" href="/blog/favicon.ico">
     <!-- 苹果设备将网页添加至主屏幕时的ICON -->
-    <link rel="apple-touch-icon-precomposed" href="/blog/img/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <div class="container">
         <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
         <a class='title' href="/blog/">Coture</a>
-        <span class='description right'>description</span>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
     </div>
 </div>
 
@@ -35,11 +35,11 @@
         <div class="post-list-container">
             
 <div class="post-list-item markdown-body">
-    <h1 class="post-list-item-title"><a href="/android/2015/12/24/welcome-to-jekyll.html">Test Blog 2</a></h1>
+    <h1 class="post-list-item-title"><a href="/android/2015/09/28/GreenDAO%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95.html">GreenDAO数据库升级后的数据库迁移方法</a></h1>
     <ul class="post-list-item-meta no-list">
         <li class="post-list-item-meta-item">
             <span class="octicon octicon-calendar">
-                <span class="post-list-item-meta-item-title">December 24, 2015</span>
+                <span class="post-list-item-meta-item-title">September 28, 2015</span>
             </span>
         </li>
         <li class="post-list-item-meta-item">
@@ -49,33 +49,29 @@
         </li>
     </ul>
     <div class="post-list-item-body">
-        <p>54321在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。</p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">export </span><span class="nv">SXHKD_SHELL</span><span class="o">=</span>shell
-</code></pre></div>
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
-<span class="o">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+        <p>在Android开发中进行数据库操作的时候，为了加快开发进度，通常会使用一些第三方类库，如GreenDAO、ActiveAndroid等。使用GreenDAO碰到数据库升级，即Schema的版本号变更，数据库结构或表结构变更的时候，都会涉及数据迁移的操作。否则默认情况下升级最新apk后，GreenDAO会直接删除之前的所有数据库表，然后新建数据库表，导致用户数据丢失。</p>
 
-<figure class="highlight"><pre><code class="language-sh" data-lang="sh">ls /system
-<span class="nb">cd</span> /home/zhenglingxiao
-grep -r <span class="s2">"server_ip"</span> src</code></pre></figure>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div><div class="highlight"><pre><code class="language-sh" data-lang="sh">ls /system
-<span class="nb">cd</span> /home/zhenglingxiao
-grep -r <span class="s2">"server_ip"</span> src
-</code></pre></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-  ...
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div>
-<p>时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。</p>
+    </div>
+</div>
 
-<p>因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。</p>
+<div class="post-list-item markdown-body">
+    <h1 class="post-list-item-title"><a href="/android/2015/04/01/Android%E5%A4%9A%E5%B1%8F%E9%80%82%E9%85%8D-%E4%B8%80-%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86.html">Android多屏适配（一）：理论知识</a></h1>
+    <ul class="post-list-item-meta no-list">
+        <li class="post-list-item-meta-item">
+            <span class="octicon octicon-calendar">
+                <span class="post-list-item-meta-item-title">April 1, 2015</span>
+            </span>
+        </li>
+        <li class="post-list-item-meta-item">
+            <span class="octicon octicon-file-directory">
+                <span class="post-list-item-meta-item-title">Android</span>
+            </span>
+        </li>
+    </ul>
+    <div class="post-list-item-body">
+        <h3>一、每英寸点数量（dpi）与每英寸像素量（ppi）</h3>
+
+<p>Android多屏适配同时受到屏幕尺寸（屏幕对角线长度，单位：英寸）与屏幕分辨率的影响，即屏幕密度。屏幕密度的常见度量单位有dpi（dot per inch）与ppi（pixel per inch），两者的区别在于dpi用于打印领域，而ppi用于图像领域。在日常使用中我们经常混用了dpi和ppi，在很多情况下我们使用dpi时其实指的是ppi。为了更好地理解以下内容，可先阅读这篇博文（<a href="http://blog.jeswang.org/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/">PPI vs DPI 有什么区别</a>）。在Android系统中dpi和ppi具有不同的含义。现在假设分辨率宽度为w；分辨率高度为h；屏幕尺寸为ss；则ppi计算公式如下：</p>
 
     </div>
 </div>
@@ -92,16 +88,16 @@ grep -r <span class="s2">"server_ip"</span> src
     <div class="one-fourth column">
         <nav class="menu side-menu">
             <a class="menu-item " href="/blog/">
-                All（ 13 ）
+                All（ 3 ）
             </a>
             
-            
-            <a class="menu-item " href="/categories/Test/">
-                Test（ 12 ）
-            </a>
             
             <a class="menu-item selected" href="/categories/Android/">
-                Android（ 1 ）
+                Android（ 2 ）
+            </a>
+            
+            <a class="menu-item " href="/categories/team/">
+                team（ 1 ）
             </a>
             
             
@@ -117,7 +113,7 @@ grep -r <span class="s2">"server_ip"</span> src
             <li><a href="/blog/feed.xml">RSS</a></li>
         </ul>
 
-        <img src="/blog/images/avatar_small.png"/>
+        <img src="/blog/images/logo.png"/>
 
         <ul class="site-footer-links">
             <li>© 2016 ZhengLingxiao</li>
@@ -127,6 +123,7 @@ grep -r <span class="s2">"server_ip"</span> src
 </div>
 
 <script src="/blog/js/anchor.min.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 <script>
     var selector = '.markdown-body h2, .markdown-body h3';
     anchors.options = {
