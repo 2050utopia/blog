@@ -5,8 +5,8 @@
     <description>遇风尘之会，必有凌霄之志</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Feb 2016 23:32:12 +0800</pubDate>
-    <lastBuildDate>Sun, 07 Feb 2016 23:32:12 +0800</lastBuildDate>
+    <pubDate>Sun, 07 Feb 2016 23:36:18 +0800</pubDate>
+    <lastBuildDate>Sun, 07 Feb 2016 23:36:18 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -337,7 +337,7 @@ bash &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/gradlew clean buil
 
 &lt;p&gt;dp/dip的全称是：density-independent pixel，中文有时也称为设备独立像素，通常用于UI布局。sp的全称是：scale-independent pixels，通常用于指定文字大小。dp与sp是Google推荐的度量单位，单位px（像素）出于多屏适配的原因不推荐使用。dp的定义是：1dp等于160dpi屏幕上的1px，则dp与px的换算公式为：$$px=dp*\frac{dpi}{160}$$sp的定义与dp类似，指的是：1sp等于160dpi屏幕上的1px乘以系统的文本缩放系数，文本缩放系数可以在“设置应用”的“显示”条目中的“字体大小”项里更改。接着通过实例说明为什么使用dp和sp，而不用px。假设要实现一个如图的界面：  &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015/04/01/01.png&quot; alt=&quot;image&quot;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015/04/01/01.png&quot; alt=&quot;image&quot;&gt;   &lt;/p&gt;
 
 &lt;p&gt;使用px的布局示例如下：  &lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
@@ -362,7 +362,7 @@ bash &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/gradlew clean buil
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;在mdpi和xhdpi的模拟器中分别得到如下界面。设置相同像素值的宽高，xhdpi中的图片只有mdpi中的一半大小。这是因为xhdpi的dpi值为320，而mdpi的dpi值为160。从上文可知，dpi对应的ppi是一个范围值，为了便于理解，假设此时dpi和ppi的值相同。那么mdpi要显示一个160像素x160像素的图像需要1英寸x1英寸的区域（160像素 / 1英寸 ＝ 160ppi），而xhdpi只需要0.5英寸x0.5英寸的区域（160像素 / 0.5英寸 ＝ 320ppi）。  &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015/04/01/02.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015/04/01/02.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
 
 &lt;p&gt;如果我们使用dp和sp进行布局，则在mdpi和xhdpi的模拟器中分别得到如下界面。  &lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
@@ -385,7 +385,7 @@ bash &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/gradlew clean buil
         &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/holo_orange_dark&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2015/04/01/03.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015/04/01/03.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
 
 &lt;p&gt;当我们使用dp和sp时系统会自动根据当前设备的dpi将dp和sp转换为px后再布局，保证我们的应用程序在不同dpi的设备上能有比较相近的显示效果。Google推荐四种字体大小：12sp，14sp，16sp，18sp。当系统的文本缩放系数为1时，sp与px的转换关系如下表所示。&lt;/p&gt;
 
