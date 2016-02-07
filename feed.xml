@@ -5,8 +5,8 @@
     <description>遇风尘之会，必有凌霄之志</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Feb 2016 23:45:15 +0800</pubDate>
-    <lastBuildDate>Sun, 07 Feb 2016 23:45:15 +0800</lastBuildDate>
+    <pubDate>Mon, 08 Feb 2016 01:04:35 +0800</pubDate>
+    <lastBuildDate>Mon, 08 Feb 2016 01:04:35 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -429,6 +429,8 @@ bash &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/gradlew clean buil
 &lt;/tbody&gt;&lt;/table&gt;
 
 &lt;p&gt;虽然在开发中推荐使用sp，但UX工程师在设计或切图标注时一般使用的还是px，上表的意义在于可以与UX工程师约定在APP中只使用若干种字号，并结合上表将切图标注中以px为单位的字号转换为代码中以sp为单位的字号。&lt;/p&gt;
+
+&lt;script src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;
 </description>
         <pubDate>Wed, 01 Apr 2015 00:00:00 +0800</pubDate>
         <link>/blog/android/2015/04/01/Android%E5%A4%9A%E5%B1%8F%E9%80%82%E9%85%8D-%E4%B8%80-%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86.html</link>
