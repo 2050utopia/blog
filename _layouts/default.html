@@ -7,7 +7,7 @@
     <meta name="author" content="zhenglingxiao">
 
     <title>
-        {{ page.title }} &middot; Coture
+        {{ page.title }} &middot; {{ site.title }}
     </title>
 
     <link rel="stylesheet" href="{{ site.baseurl }}/css/blog.css">
@@ -15,7 +15,7 @@
     <!-- Favicons -->
     <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
     <!-- 苹果设备将网页添加至主屏幕时的ICON -->
-    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/img/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/images/apple-touch-icon-precomposed.png">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 <div class='site-header'>
     <div class="container">
         <a href="{{ site.baseurl }}/"><img class="logo" src="{{ site.baseurl }}/images/logo.png"></a>
-        <a class='title' href="{{ site.baseurl }}/">Coture</a>
+        <a class='title' href="{{ site.baseurl }}/">{{ site.title }}</a>
         <span class='description right'>{{ site.description }}</span>
     </div>
 </div>
@@ -38,7 +38,7 @@
             <li><a href="{{ site.baseurl }}/feed.xml">RSS</a></li>
         </ul>
 
-        <img src="{{ site.baseurl }}/images/avatar_small.png"/>
+        <img src="{{ site.baseurl }}/images/logo.png"/>
 
         <ul class="site-footer-links">
             <li>© {{ site.time | date: '%Y' }} ZhengLingxiao</li>
@@ -48,6 +48,7 @@
 </div>
 
 <script src="{{ site.baseurl }}/js/anchor.min.js"></script>
+<!--
 <script>
     var selector = '.markdown-body h2, .markdown-body h3';
     anchors.options = {
@@ -56,5 +57,6 @@
     };
     anchors.add(selector);
 </script>
+-->
 </body>
 </html>

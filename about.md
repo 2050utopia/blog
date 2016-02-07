@@ -1,14 +1,13 @@
 ---
 layout: post
-title: About
+title: 关于我
 permalink: /about
 ---
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
-You can find the source code for the Jekyll new theme at:
- /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+![image](/blog/images/avatar.png) 
 
-You can find the source code for Jekyll at
- /
-[jekyll](https://github.com/jekyll/jekyll)
+**郑凌霄**  
+**华南理工大学**  
+**Android应用工程师**   
+
+

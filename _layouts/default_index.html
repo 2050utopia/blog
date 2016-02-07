@@ -18,7 +18,7 @@ layout: default
             </a>
             {% if post.categories != empty %}
             {% for category in site.categories %}
-            <a class="menu-item {% if page.title == category.first %}selected{% endif %}" href="/categories/{{ category | first }}/">
+            <a class="menu-item {% if page.title == category.first %}selected{% endif %}" href="{{ site.baseurl }}/categories/{{ category | first }}/">
                 {{ category | first }}（ {{ category | last | size }} ）
             </a>
             {% endfor %}

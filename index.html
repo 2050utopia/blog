@@ -4,7 +4,7 @@ layout: default_index
 ---
 {% for post in paginator.posts %}
 <div class="post-list-item markdown-body">
-    <h1 class="post-list-item-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <h2 class="post-list-item-title"><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></h2>
     <ul class="post-list-item-meta no-list">
         <li class="post-list-item-meta-item">
             <span class="octicon octicon-calendar">
