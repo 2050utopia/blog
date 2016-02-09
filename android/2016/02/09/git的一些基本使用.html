@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        git的一些基本使用 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">git的一些基本使用</h2>
+        <div><p>个人觉得，如果连git都不会用，那么不能算是一名合格的android程序员。简单记录下一些常用的git命令。</p>
+
+<!-- more -->
+
+<h3>一、git配置</h3>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">git config --global user.name xxx // 配置用户名为xxx
+git config --global user.email xxx // 配置用户邮箱为xxx
+git config --global core.editor vim // 配置编辑器为vim，通常在写commit信息时用到
+// 让git忽略文件模式的变化，比如一个文件之前的权限是666，不改变文件内容，执行chmod 777 file，那么git将把该文件标记为有修改。
+// 实际使用场景是，如果你使用的是Linux，而你的同时使用windows，那么很可能某些文件在git clone到windows后自动就改变权限了。
+git config --global core.filemode <span class="nb">false</span> 
+</code></pre></div>
+<h3>二、git设置快捷命令</h3>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">git config --global alias.st status // 使用git st代替git status
+</code></pre></div>
+<p>我个人的设置如下：</p>
+
+<blockquote>
+<p>alias.df=diff<br>
+alias.br=branch<br>
+alias.st=status<br>
+alias.ci=commit<br>
+alias.co=checkout<br>
+alias.lg=log --decorate --graph --color  </p>
+</blockquote>
+
+<h3>三、git小命令</h3>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">git checkout -b xxx origin/xxx // 拉远程分支到本地，xxx为分支名称
+git blame xxx // 查看某个文件每一行的最后提交记录，xxx为文件路径
+</code></pre></div>
+<h3>四、git stash的使用</h3>
+
+<p>git stash在多人协同开发中是时常用到的。比如：提交代码前要拉最新的代码，那么有冲突怎么破？先git stash将本地代码缓存起来，此时整个目录就干净了，拉下代码后再git stash pop将缓存的代码合并到当前代码中，如果有冲突，会有相应提示。解决冲突后，git add冲突文件后，就可以直接提交代码了。</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">git stash // 缓存代码
+git stash save <span class="s2">"fix bug"</span> // 缓存代码，并命名
+git stash list // 列出所有缓存代码
+git stash pop // 取出缓存代码，会从堆栈中清除
+git stash pop stash@<span class="se">\{</span>1<span class="se">\}</span> // 取出指定index的缓存代码，会从堆栈中清除
+git stash apply stash@<span class="se">\{</span>1<span class="se">\}</span> // 取出指定index的缓存代码，不会从堆栈中清除
+</code></pre></div>
+<h3>五、git submodule的使用</h3>
+
+<p>这货觉得不是非常好用，在实际项目中使用不多。实际使用场景是：一些通用类库是使用git单独维护的，在实际项目中需要使用，这是就会采用在git中再初始化一个git的方式来导入这个类库。其实这种场景只会出现在这个类库的初期，此时频繁改动或者解bug。更好的解决方案是使用nexus搭建一个maven私服，然后定期有规划地提供aar或者jar，实际项目只需要在build.gralde中引入即可。</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">git submodule add 类库仓库地址 类库在当前项目中的路径 // 在当前工程中初始化一个submodule
+git submodule update --init --recursive // 下载带有submodule的项目时需执行此命令将对应的submodule代码拉下来
+</code></pre></div></div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>

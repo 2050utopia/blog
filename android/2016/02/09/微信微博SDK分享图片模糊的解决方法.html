@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        微信微博SDK分享图片模糊的解决方法 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">微信微博SDK分享图片模糊的解决方法</h2>
+        <div><p>当使用微信分享图片到朋友圈或者微博分享图片的时候，如果分享的图片太大，那么微信和微博的SDK将自动压缩图片的质量来减小大小，这就导致了分享出去的图片出现模糊或失真的现象。解决思路是在分享图片之前，可以使用pngguant来进行一轮压缩减小图片大小，pngguant的优点是在尽量保证图片质量的前提下压缩图片大小。</p>
+
+<!-- more -->
+
+<p><a href="https://pngquant.org">pngguant</a>是一个有损压缩png的解决方案，可惜在其官网上并不提供直接供android使用的so或者jar。但是在github上可以找到一个<a href="https://github.com/ndahlquist/pngquant-android">pngquant-android</a>的项目，可以直接在build.gradle中导入类库使用。使用方法也很简单，代码如下。实际效果很好。</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">File</span> <span class="n">inputPngFile</span> <span class="o">=</span> <span class="n">getYourPng</span><span class="o">();</span>
+<span class="n">File</span> <span class="n">outputPngFile</span> <span class="o">=</span> <span class="n">getOutputFile</span><span class="o">();</span>
+<span class="k">new</span> <span class="nf">LibPngQuant</span><span class="p">(</span><span class="o">).</span><span class="na">pngQuantFile</span><span class="o">(</span><span class="n">inputFile</span><span class="o">,</span> <span class="n">outputFile</span><span class="o">);</span>
+</code></pre></div></div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>

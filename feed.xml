@@ -5,9 +5,138 @@
     <description>遇风尘之会，必有凌霄之志</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Feb 2016 01:04:35 +0800</pubDate>
-    <lastBuildDate>Mon, 08 Feb 2016 01:04:35 +0800</lastBuildDate>
+    <pubDate>Wed, 10 Feb 2016 01:46:07 +0800</pubDate>
+    <lastBuildDate>Wed, 10 Feb 2016 01:46:07 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>微信微博SDK分享图片模糊的解决方法</title>
+        <description>&lt;p&gt;当使用微信分享图片到朋友圈或者微博分享图片的时候，如果分享的图片太大，那么微信和微博的SDK将自动压缩图片的质量来减小大小，这就导致了分享出去的图片出现模糊或失真的现象。解决思路是在分享图片之前，可以使用pngguant来进行一轮压缩减小图片大小，pngguant的优点是在尽量保证图片质量的前提下压缩图片大小。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pngquant.org&quot;&gt;pngguant&lt;/a&gt;是一个有损压缩png的解决方案，可惜在其官网上并不提供直接供android使用的so或者jar。但是在github上可以找到一个&lt;a href=&quot;https://github.com/ndahlquist/pngquant-android&quot;&gt;pngquant-android&lt;/a&gt;的项目，可以直接在build.gradle中导入类库使用。使用方法也很简单，代码如下。实际效果很好。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputPngFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getYourPng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputPngFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getOutputFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;LibPngQuant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pngQuantFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/android/2016/02/09/%E5%BE%AE%E4%BF%A1%E5%BE%AE%E5%8D%9ASDK%E5%88%86%E4%BA%AB%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</link>
+        <guid isPermaLink="true">/blog/android/2016/02/09/%E5%BE%AE%E4%BF%A1%E5%BE%AE%E5%8D%9ASDK%E5%88%86%E4%BA%AB%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</guid>
+        
+        
+        <category>Android</category>
+        
+      </item>
+    
+      <item>
+        <title>使用nanohttpd在android设备上实现一个简单的FTP服务</title>
+        <description>&lt;p&gt;最近接手一个带行车记录仪的hud项目，需要实现在通过局域网下，通过ios或者android的app端能够观看、保存、删除hud设备上录制的视频文件的功能。其实简单来说就是在hud端实现一个简单的FTP服务，路劲指向视频的保存路径，并在网页上提供下载和删除的按钮。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;这里我们使用&lt;a href=&quot;https://github.com/NanoHttpd/nanohttpd&quot;&gt;nanohttpd&lt;/a&gt;来实现这个功能。简单的示例代码如下。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyApplication&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;HttpServer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpServer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpServer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8080&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;httpServer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HttpServer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NanoHTTPD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpServer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Response&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IHTTPSession&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;folder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 视频录制的文件夹&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;folder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;folder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isDirectory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NotFoundException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Cannot find target folder in server&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;processBrowse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;folder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Response&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;processBrowse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;folder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 这里使用了apache模版类库velocity，遍历folder下的视频文件后生成html直接返回&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 使用ajax进行删除操作的反向控制和刷新&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TemplateFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBrowseFolderHtml&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;folder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/android/2016/02/09/%E4%BD%BF%E7%94%A8nanohttpd%E5%9C%A8android%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84FTP%E6%9C%8D%E5%8A%A1.html</link>
+        <guid isPermaLink="true">/blog/android/2016/02/09/%E4%BD%BF%E7%94%A8nanohttpd%E5%9C%A8android%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84FTP%E6%9C%8D%E5%8A%A1.html</guid>
+        
+        
+        <category>Android</category>
+        
+      </item>
+    
+      <item>
+        <title>git的一些基本使用</title>
+        <description>&lt;p&gt;个人觉得，如果连git都不会用，那么不能算是一名合格的android程序员。简单记录下一些常用的git命令。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3&gt;一、git配置&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git config --global user.name xxx // 配置用户名为xxx
+git config --global user.email xxx // 配置用户邮箱为xxx
+git config --global core.editor vim // 配置编辑器为vim，通常在写commit信息时用到
+// 让git忽略文件模式的变化，比如一个文件之前的权限是666，不改变文件内容，执行chmod 777 file，那么git将把该文件标记为有修改。
+// 实际使用场景是，如果你使用的是Linux，而你的同时使用windows，那么很可能某些文件在git clone到windows后自动就改变权限了。
+git config --global core.filemode &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;二、git设置快捷命令&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git config --global alias.st status // 使用git st代替git status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我个人的设置如下：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;alias.df=diff&lt;br&gt;
+alias.br=branch&lt;br&gt;
+alias.st=status&lt;br&gt;
+alias.ci=commit&lt;br&gt;
+alias.co=checkout&lt;br&gt;
+alias.lg=log --decorate --graph --color  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;三、git小命令&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git checkout -b xxx origin/xxx // 拉远程分支到本地，xxx为分支名称
+git blame xxx // 查看某个文件每一行的最后提交记录，xxx为文件路径
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;四、git stash的使用&lt;/h3&gt;
+
+&lt;p&gt;git stash在多人协同开发中是时常用到的。比如：提交代码前要拉最新的代码，那么有冲突怎么破？先git stash将本地代码缓存起来，此时整个目录就干净了，拉下代码后再git stash pop将缓存的代码合并到当前代码中，如果有冲突，会有相应提示。解决冲突后，git add冲突文件后，就可以直接提交代码了。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git stash // 缓存代码
+git stash save &lt;span class=&quot;s2&quot;&gt;&quot;fix bug&quot;&lt;/span&gt; // 缓存代码，并命名
+git stash list // 列出所有缓存代码
+git stash pop // 取出缓存代码，会从堆栈中清除
+git stash pop stash@&lt;span class=&quot;se&quot;&gt;\{&lt;/span&gt;1&lt;span class=&quot;se&quot;&gt;\}&lt;/span&gt; // 取出指定index的缓存代码，会从堆栈中清除
+git stash apply stash@&lt;span class=&quot;se&quot;&gt;\{&lt;/span&gt;1&lt;span class=&quot;se&quot;&gt;\}&lt;/span&gt; // 取出指定index的缓存代码，不会从堆栈中清除
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;五、git submodule的使用&lt;/h3&gt;
+
+&lt;p&gt;这货觉得不是非常好用，在实际项目中使用不多。实际使用场景是：一些通用类库是使用git单独维护的，在实际项目中需要使用，这是就会采用在git中再初始化一个git的方式来导入这个类库。其实这种场景只会出现在这个类库的初期，此时频繁改动或者解bug。更好的解决方案是使用nexus搭建一个maven私服，然后定期有规划地提供aar或者jar，实际项目只需要在build.gralde中引入即可。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git submodule add 类库仓库地址 类库在当前项目中的路径 // 在当前工程中初始化一个submodule
+git submodule update --init --recursive // 下载带有submodule的项目时需执行此命令将对应的submodule代码拉下来
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/android/2016/02/09/git%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html</link>
+        <guid isPermaLink="true">/blog/android/2016/02/09/git%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html</guid>
+        
+        
+        <category>Android</category>
+        
+      </item>
     
       <item>
         <title>GreenDAO数据库升级后的数据库迁移方法</title>

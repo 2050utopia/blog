@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        使用nanohttpd在android设备上实现一个简单的FTP服务 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">使用nanohttpd在android设备上实现一个简单的FTP服务</h2>
+        <div><p>最近接手一个带行车记录仪的hud项目，需要实现在通过局域网下，通过ios或者android的app端能够观看、保存、删除hud设备上录制的视频文件的功能。其实简单来说就是在hud端实现一个简单的FTP服务，路劲指向视频的保存路径，并在网页上提供下载和删除的按钮。</p>
+
+<!-- more -->
+
+<p>这里我们使用<a href="https://github.com/NanoHttpd/nanohttpd">nanohttpd</a>来实现这个功能。简单的示例代码如下。</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyApplication</span> <span class="kd">extends</span> <span class="n">Application</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+        <span class="n">HttpServer</span> <span class="n">httpServer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpServer</span><span class="o">(</span><span class="mi">8080</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">httpServer</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HttpServer</span> <span class="kd">extends</span> <span class="n">NanoHTTPD</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="n">HttpServer</span><span class="o">(</span><span class="kt">int</span> <span class="n">port</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">port</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Response</span> <span class="n">serve</span><span class="o">(</span><span class="n">IHTTPSession</span> <span class="n">session</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">File</span> <span class="n">folder</span> <span class="o">=</span> <span class="o">...;</span> <span class="c1">// 视频录制的文件夹</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">folder</span><span class="o">.</span><span class="na">exists</span><span class="o">()</span> <span class="o">||</span> <span class="o">!</span><span class="n">folder</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">NotFoundException</span><span class="o">(</span><span class="s">"Cannot find target folder in server"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">processBrowse</span><span class="o">(</span><span class="n">folder</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">Response</span> <span class="n">processBrowse</span><span class="o">(</span><span class="n">File</span> <span class="n">folder</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 这里使用了apache模版类库velocity，遍历folder下的视频文件后生成html直接返回</span>
+        <span class="c1">// 使用ajax进行删除操作的反向控制和刷新</span>
+        <span class="k">return</span> <span class="n">TemplateFactory</span><span class="o">.</span><span class="na">getBrowseFolderHtml</span><span class="o">(</span><span class="n">folder</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>
