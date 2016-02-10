@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        环信android SDK无法自动重连的解决方法 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">环信android SDK无法自动重连的解决方法</h2>
+        <div><p>环信在第一次使用时需要执行登录的操作，之后执行连接操作，这样就可以使用其相关功能了。如果设置了自动登录，那么下次app启动的时候，环信将自动登录，然后自动连接。在环信的android SDK中，有提供登录和登出的api调用，但是没有提供连接和断开连接的api调用。环信表示SDK内部会做好相应处理，但是实际测试结果看是不理想的。在android上，按home键把应用程序退居后台10min以上，如果应用没被杀掉，再次进入应用的时候，环信是不会执行连接操作的，导致这时收不到环信推送的信息，需要杀掉应用重启才行。通过环信的log信息看出，在10min内环信不断请求连接，但是由于在后台，这些请求就被忽略了，之后达到最大请求次数后就不再请求了。目前想到的解决方案是，在应用程序进入前台后，手动执行一次登出再登录，登录的时候环信将再次重新连接。</p>
+
+<!-- more -->
+
+<p>主要的重连代码如下，在需要检查的时候调用，我这里是在进入MainActivity的时候调用。</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">reConnectIfNeed</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">EMChatManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">isConnected</span><span class="o">()</span> <span class="o">||</span> <span class="n">mIsConnecting</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Accounts</span> <span class="n">accounts</span> <span class="o">=</span> <span class="n">DataBaseHelper</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getAccounts</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">accounts</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">accounts</span><span class="o">.</span><span class="na">getServerId</span><span class="o">()))</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">mIsConnecting</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+    <span class="kd">final</span> <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">accounts</span><span class="o">.</span><span class="na">getServerId</span><span class="o">();</span>
+    <span class="n">EMChatManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">logout</span><span class="o">(</span><span class="k">new</span> <span class="n">EMCallBack</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSuccess</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">EMChatManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">login</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">MD5</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">id</span><span class="o">),</span> <span class="k">new</span> <span class="n">EMCallBack</span><span class="o">()</span> <span class="o">{</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSuccess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">EMChat</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setAppInited</span><span class="o">();</span>
+                    <span class="n">mIsConnecting</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="n">onError</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">mIsConnecting</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="n">onProgress</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="c1">// NOOP</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onError</span><span class="o">(</span><span class="kt">int</span> <span class="n">code</span><span class="o">,</span> <span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mIsConnecting</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onProgress</span><span class="o">(</span><span class="kt">int</span> <span class="n">progress</span><span class="o">,</span> <span class="n">String</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// NOOP</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+<span class="o">}</span>
+</code></pre></div></div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>

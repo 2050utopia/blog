@@ -35,6 +35,26 @@
         <div class="post-list-container">
             
 <div class="post-list-item markdown-body">
+    <h1 class="post-list-item-title"><a href="/blog/android/2016/02/10/%E7%8E%AF%E4%BF%A1android-SDK%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html">环信android SDK无法自动重连的解决方法</a></h1>
+    <ul class="post-list-item-meta no-list">
+        <li class="post-list-item-meta-item">
+            <span class="octicon octicon-calendar">
+                <span class="post-list-item-meta-item-title">February 10, 2016</span>
+            </span>
+        </li>
+        <li class="post-list-item-meta-item">
+            <span class="octicon octicon-file-directory">
+                <span class="post-list-item-meta-item-title">Android</span>
+            </span>
+        </li>
+    </ul>
+    <div class="post-list-item-body">
+        <p>环信在第一次使用时需要执行登录的操作，之后执行连接操作，这样就可以使用其相关功能了。如果设置了自动登录，那么下次app启动的时候，环信将自动登录，然后自动连接。在环信的android SDK中，有提供登录和登出的api调用，但是没有提供连接和断开连接的api调用。环信表示SDK内部会做好相应处理，但是实际测试结果看是不理想的。在android上，按home键把应用程序退居后台10min以上，如果应用没被杀掉，再次进入应用的时候，环信是不会执行连接操作的，导致这时收不到环信推送的信息，需要杀掉应用重启才行。通过环信的log信息看出，在10min内环信不断请求连接，但是由于在后台，这些请求就被忽略了，之后达到最大请求次数后就不再请求了。目前想到的解决方案是，在应用程序进入前台后，手动执行一次登出再登录，登录的时候环信将再次重新连接。</p>
+
+    </div>
+</div>
+
+<div class="post-list-item markdown-body">
     <h1 class="post-list-item-title"><a href="/blog/android/2016/02/09/%E5%BE%AE%E4%BF%A1%E5%BE%AE%E5%8D%9ASDK%E5%88%86%E4%BA%AB%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html">微信微博SDK分享图片模糊的解决方法</a></h1>
     <ul class="post-list-item-meta no-list">
         <li class="post-list-item-meta-item">
@@ -148,12 +168,12 @@
     <div class="one-fourth column">
         <nav class="menu side-menu">
             <a class="menu-item " href="/blog/">
-                All（ 6 ）
+                All（ 7 ）
             </a>
             
             
             <a class="menu-item selected" href="/blog/categories/Android/">
-                Android（ 5 ）
+                Android（ 6 ）
             </a>
             
             <a class="menu-item " href="/blog/categories/team/">
