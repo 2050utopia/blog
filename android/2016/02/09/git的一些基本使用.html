@@ -77,6 +77,11 @@ git stash apply stash@<span class="se">\{</span>1<span class="se">\}</span> // �
 <p>这货觉得不是非常好用，在实际项目中使用不多。实际使用场景是：一些通用类库是使用git单独维护的，在实际项目中需要使用，这是就会采用在git中再初始化一个git的方式来导入这个类库。其实这种场景只会出现在这个类库的初期，此时频繁改动或者解bug。更好的解决方案是使用nexus搭建一个maven私服，然后定期有规划地提供aar或者jar，实际项目只需要在build.gralde中引入即可。</p>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell">git submodule add 类库仓库地址 类库在当前项目中的路径 // 在当前工程中初始化一个submodule
 git submodule update --init --recursive // 下载带有submodule的项目时需执行此命令将对应的submodule代码拉下来
+</code></pre></div>
+<h3>六、删除本地缓存的已被删除的远程分支</h3>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">// 查看分支情况：有些分支已在远程删除，但是本地由于你之前拉取过，所以本地会一直显示
+git remote show origin
+git remote prune origin // 将无效的分支删除
 </code></pre></div></div>
     </div>
 </div>
