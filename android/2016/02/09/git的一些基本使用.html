@@ -42,7 +42,8 @@ git config --global user.email xxx // 配置用户邮箱为xxx
 git config --global core.editor vim // 配置编辑器为vim，通常在写commit信息时用到
 // 让git忽略文件模式的变化，比如一个文件之前的权限是666，不改变文件内容，执行chmod 777 file，那么git将把该文件标记为有修改。
 // 实际使用场景是，如果你使用的是Linux，而你的同时使用windows，那么很可能某些文件在git clone到windows后自动就改变权限了。
-git config --global core.filemode <span class="nb">false</span> 
+git config --global core.filemode <span class="nb">false 
+</span>git config --global core.ignorecase <span class="nb">false</span> // 开启大小写敏感，文件名的大小写变化也算是有改变
 </code></pre></div>
 <h3>二、git设置快捷命令</h3>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell">git config --global alias.st status // 使用git st代替git status

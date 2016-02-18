@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        使用apktool进行解包和重新打包 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">使用apktool进行解包和重新打包</h2>
+        <div><p>有时项目交接出现问题，只有apk，但是没有源码的情况还是有的。正好又需要更新一些配置文件。比如公司服务器换地址了；客户突然想要换个logo了等等。这时就需要用apktool进行解包，修改资源文件后重新打包，最后使用相同的key进行签名即可。</p>
+
+<!-- more -->
+
+<p>首先将apk复制到apktool下，执行以下命令解压，之后会生成xxx文件夹，文件夹下是所有解包后的文件。</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">sh apktool d xxx.apk
+</code></pre></div>
+<p>找到需要修改的资源文件进行修改。需要注意的是，如果是修改AndroidManifest.xml，apktool解包出来的AndroidManifest.xml可能会有内容不完整的问题。比如没有versionName，verisonCode和uses-sdk等问题，所以最好配合AXMLPrinter2.jar使用，执行以下代码可以反编译android apk中的xml文件。</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">java -jar AXMLPrinter2.jar AndroidManifest.xml -&gt; AndroidManifest.txt
+</code></pre></div>
+<p>需要注意的是不能把AXMLPrinter2.jar反编译出来的AndroidManifest.xml复制覆盖apktool解包出来AndroidManifest.xml，否则之后无法重新打包，因为AXMLPrinter2.jar反编译出来的AndroidManifest.xml中资源id的显示是错乱的。  </p>
+
+<p>修改完成之后执行以下命令重新打包，需要注意的是打包成功后生成的apk是无法直接安装的，因为没有进行签名，所以需要之前apk的签名文件对新生成的apk进行签名。</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">sh apktool b xxx -o xxx_unsigned.apk // xxx为之前解包出来的文件夹
+jarsigner -verbose -keystore keystore.jks -signedjar xxx_signed.apk xxx_unsigned.apk <span class="nb">alias</span> // alias为签名文件的alias
+</code></pre></div>
+<p>执行签名文件后会提示输入对应alias的密码，之后显示正在签名，最后就生成apk了。</p>
+</div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>
