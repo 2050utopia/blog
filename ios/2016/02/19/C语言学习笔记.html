@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        C语言学习笔记 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">C语言学习笔记</h2>
+        <div><p>学习iOS开发前的C语言基础学习笔记。</p>
+
+<!-- more -->
+
+<p>#inclue的作用是完全引用文件，相当于复制粘贴。当引用的是系统的文件时使用&lt;&gt;，当引用的是自己写的文件时用&quot;&quot;。不能#inclue c文件，不然链接的时候会报重复定义函数的错误。  </p>
+
+<p>c程序运行过程：编写--&gt;编译（每个c文件编译为相应的obj文件）--&gt;链接（各个obj文件融合再融合c的函数库）--&gt;运行（链接后的文件就是可执行文件了）。  </p>
+
+<p>读取参数函数scanf的用法：</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 这里&amp;符号的意思是取地址
+</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 支持回车输入多个参数
+</span></code></pre></div>
+<p>c语言中没有long，short类型，它们和signed以及unsigned一样都是修饰符，通常用来修饰int。long，short指定int有不同的取值范围。unsigned主要指修饰的int是无符号的，意思是只能接受大于等于0的值，如果强行赋负值，可能会内存溢出或者是个奇奇挂怪的值。  </p>
+
+<p>不同编译环境下基本数据类型的存储长度</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left"></th>
+<th style="text-align: left">16位编译器</th>
+<th style="text-align: left">32位编译器</th>
+<th style="text-align: left">64位编译器</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">char</td>
+<td style="text-align: left">1</td>
+<td style="text-align: left">1</td>
+<td style="text-align: left">1</td>
+</tr>
+<tr>
+<td style="text-align: left">void*（指针变量）</td>
+<td style="text-align: left">2</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">8</td>
+</tr>
+<tr>
+<td style="text-align: left">short int</td>
+<td style="text-align: left">2</td>
+<td style="text-align: left">2</td>
+<td style="text-align: left">2</td>
+</tr>
+<tr>
+<td style="text-align: left">unsigned int</td>
+<td style="text-align: left">2</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">4</td>
+</tr>
+<tr>
+<td style="text-align: left">int</td>
+<td style="text-align: left">2</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">4</td>
+</tr>
+<tr>
+<td style="text-align: left">float</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">4</td>
+</tr>
+<tr>
+<td style="text-align: left">double</td>
+<td style="text-align: left">8</td>
+<td style="text-align: left">8</td>
+<td style="text-align: left">8</td>
+</tr>
+<tr>
+<td style="text-align: left">long</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">8</td>
+</tr>
+<tr>
+<td style="text-align: left">unsigned long</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">4</td>
+<td style="text-align: left">8</td>
+</tr>
+<tr>
+<td style="text-align: left">long long</td>
+<td style="text-align: left">8</td>
+<td style="text-align: left">8</td>
+<td style="text-align: left">8</td>
+</tr>
+</tbody></table>
+
+<p>c语言中一维数组的写法如下，注意和java的写法不一样。</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span><span class="p">[]</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// 错误
+</span><span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// 错误
+</span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="c1">// 正确
+</span></code></pre></div>
+<p>数组在内侧中是连续的内存地址，数组名代表着整个数组的地址，也就是数组的起始地址。String s = &quot;zlx&quot;;用char存储，实际上包括了&#39;z&#39;，&#39;l&#39;，&#39;x&#39;，&#39;\0&#39;四个char，最后一个字符表示字符串结束。</p>
+
+<p>以下是指针的简单例子：</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span> <span class="c1">// 定义一个指针变量，且只能指向char类型
+</span><span class="n">b</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// 让指针变量b指向a
+</span><span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 这里的*b代表：访问b中存储的地址对应的存储空间
+</span></code></pre></div><div class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">char</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"zlx"</span><span class="p">;</span> <span class="c1">// 定义了一个字符串变量
+</span><span class="kt">char</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="s">"zlx"</span><span class="p">;</span> <span class="c1">// 定义了一个字符串常量
+</span></code></pre></div>
+<p>函数名就代表内存地址，所以指针也是可以指向函数的。
+``` c
+int sum(int a, int b) {
+    return 0;
+}</p>
+
+<p>int main() {
+    // 定义了一个指向函数的指针变量p
+    // 被p指向的函数返回值为int
+    int (<em>P)(int a, int b);
+    p = sum;
+    (</em>p)(5, 6) // 调用函数
+    p(5, 6) // 这样调用函数也是可以的
+}
+```</p>
+
+<p>外部函数用extern修饰，但是默认函数都是外部函数，所以可以不加extern。内部函数用static修饰。c语言中允许有同名的内部函数，但是不允许有同名的外部函数。  </p>
+
+<p>如果多个源文件中有同名的全局变量（extern），那么它们指向的是同一个变量。如果多个源文件中有同名的内部变量（static），那么它们互不干扰。</p>
+
+<p>结构体和数组有点类似，但是数组只能存储相同类型的数据，但是结构体能够存储不同类型的数据。结构体和面向对象的类不同，结构体没有方法，只有属性。结构体也可以包含结构体。</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">struct</span> <span class="n">Student</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">};</span> <span class="c1">// 注意这里一定要加分号，这里只是定义了一个结构体，还没有创建内存
+</span>
+<span class="k">struct</span> <span class="n">Student</span> <span class="n">stu</span> <span class="o">=</span> <span class="p">{</span><span class="mi">20</span><span class="p">};</span>
+
+<span class="c1">// 也可以这么创建
+</span><span class="k">struct</span> <span class="n">Student</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">stu</span> <span class="o">=</span> <span class="p">{</span><span class="mi">20</span><span class="p">};</span>
+
+<span class="c1">// 也可以这么创建
+</span><span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">stu</span> <span class="o">=</span> <span class="p">{</span><span class="mi">20</span><span class="p">};</span>
+
+<span class="c1">// 结构体数组
+</span><span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">stu</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="mi">25</span><span class="p">}</span> <span class="p">};</span>
+</code></pre></div>
+<p>c语言中，枚举在实际编译的时候，其实是使用整型进行代替的。</p>
+
+<p>typedef给类型起别名，也可以给别名再起别名。typedef还可以给指针和结构体起别名。</p>
+</div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>

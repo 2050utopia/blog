@@ -5,9 +5,202 @@
     <description>遇风尘之会，必有凌霄之志</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Feb 2016 10:48:47 +0800</pubDate>
-    <lastBuildDate>Thu, 18 Feb 2016 10:48:47 +0800</lastBuildDate>
+    <pubDate>Mon, 22 Feb 2016 09:34:42 +0800</pubDate>
+    <lastBuildDate>Mon, 22 Feb 2016 09:34:42 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>iOS开发的证书及认证</title>
+        <description>&lt;p&gt;iOS开发时涉及的证书及认证主要包括：Bundle Identifier (App ID)、Device、Certificates、CSR文件 (Certificate Signing Request)、Provisioning Profile等。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Bundle Identifier (App ID)在Xcode的General下配置，相当于android的package name，每个应用单独对应，不能重复。iOS的app发布分为app store发布和in house发布，前者只能发布到apple的官方app store，后者就是我们在其他第三方平台下载的ipa文件。所以在Bundle Identifier上也最好是做区分的，比如：com.zlx.inhouse.camera就是针对in house发布的。Bundle Identifier也是需要在apple的开发者后台添加的，否则无法发布。  &lt;/p&gt;
+
+&lt;p&gt;Device就是指实际的测试设备，这部分还不是弄太明白，可以在apple的开发者网站查看目前已经绑定的设备，普通账号最多绑定100个设备。我加入的公司的高级账号，貌似可以绑定更多的设备。  &lt;/p&gt;
+
+&lt;p&gt;iOS的签名其实和android有点像，私钥公钥也是我们自己生成的。只是在iOS开发中需要通过OSX系统的Keychain Access生成。而公钥则需要上传到apple的开发者后台。具体过程如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用Keychain Access生成CSR文件 (Certificate Signing Request)，执行完这步的时候Keychain Access中其实已经生成了公钥私钥了&lt;/li&gt;
+&lt;li&gt;把对应的CSR文件文件上传到apple的开发者后台，这步apple的开发者后台会记录下你的公钥，完成上传后可以下载cer文件，即证书&lt;/li&gt;
+&lt;li&gt;在开发的电脑上双击打开cer文件，这样证书就导入电脑了&lt;/li&gt;
+&lt;li&gt;这里最好进入Keychain Access保存下私钥，导出的私钥就是p12文件了。以便以后更新系统或者换电脑时能够重新导入私钥。同一个团队的成员共享同一个私钥，同一个团队的所有应用共享一个私钥&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当编译项目的时候，Xcode会根据配置，找到key chain中的私钥对应用进行签名。当应用发布的时候，apple会用持有的公钥进行验证，保证应用的来源是安全的。当然这一过程还包括验证Bundle Identifier，为了方便起见，将验证需要的一系列资料聚合成Provisioning Profile，方便配置。  &lt;/p&gt;
+
+&lt;p&gt;Provisioning Profile也是需要在apple开发者后台添加的，它决定Xcode用哪个证书（公钥/私钥）组合  (Key Pair/Signing Identity) 来签署应用程序 (Signing Product)，将在应用程序打包时嵌入到.ipa包里。在实际开发中，Xcode中的配置其实是比较简单的，在成功导入证书后，在Xcode的General下配置Team为对应的条目。Build Settings|Code Signing下的Code Signing Identity和Provisioning Profile分别选择iOS Developer和Automatic即可。  &lt;/p&gt;
+
+&lt;p&gt;在Xcode高版本中，支持本地证书真机测试了，也就是不用花至少99美元买证书了。首先打开Xcode的时候，在General的Team下拉框中就有一个Personal Team的选项，选取这个选项，然后电脑连接apple设备。这时Team下拉框下面会显示警告，选择运行设备为刚刚连接的真机，点击Fix Issue之后警告就消失了，然后直接运行就能把app运行到真机上了。使用此方法启动app时，iPhone会报错：不受信任的开发者，此时需要到iPhone的设备管理中，在相应描述文件里选择信任即可。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 19 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/ios/2016/02/19/iOS%E5%BC%80%E5%8F%91%E7%9A%84%E8%AF%81%E4%B9%A6%E5%8F%8A%E8%AE%A4%E8%AF%81.html</link>
+        <guid isPermaLink="true">/blog/ios/2016/02/19/iOS%E5%BC%80%E5%8F%91%E7%9A%84%E8%AF%81%E4%B9%A6%E5%8F%8A%E8%AE%A4%E8%AF%81.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
+    
+      <item>
+        <title>C语言学习笔记</title>
+        <description>&lt;p&gt;学习iOS开发前的C语言基础学习笔记。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;#inclue的作用是完全引用文件，相当于复制粘贴。当引用的是系统的文件时使用&amp;lt;&amp;gt;，当引用的是自己写的文件时用&amp;quot;&amp;quot;。不能#inclue c文件，不然链接的时候会报重复定义函数的错误。  &lt;/p&gt;
+
+&lt;p&gt;c程序运行过程：编写--&amp;gt;编译（每个c文件编译为相应的obj文件）--&amp;gt;链接（各个obj文件融合再融合c的函数库）--&amp;gt;运行（链接后的文件就是可执行文件了）。  &lt;/p&gt;
+
+&lt;p&gt;读取参数函数scanf的用法：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这里&amp;amp;符号的意思是取地址
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 支持回车输入多个参数
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;c语言中没有long，short类型，它们和signed以及unsigned一样都是修饰符，通常用来修饰int。long，short指定int有不同的取值范围。unsigned主要指修饰的int是无符号的，意思是只能接受大于等于0的值，如果强行赋负值，可能会内存溢出或者是个奇奇挂怪的值。  &lt;/p&gt;
+
+&lt;p&gt;不同编译环境下基本数据类型的存储长度&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;16位编译器&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;32位编译器&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;64位编译器&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;char&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;void*（指针变量）&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;short int&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;unsigned int&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;int&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;float&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;double&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;long&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;unsigned long&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;long long&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;c语言中一维数组的写法如下，注意和java的写法不一样。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 错误
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 错误
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 正确
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;数组在内侧中是连续的内存地址，数组名代表着整个数组的地址，也就是数组的起始地址。String s = &amp;quot;zlx&amp;quot;;用char存储，实际上包括了&amp;#39;z&amp;#39;，&amp;#39;l&amp;#39;，&amp;#39;x&amp;#39;，&amp;#39;\0&amp;#39;四个char，最后一个字符表示字符串结束。&lt;/p&gt;
+
+&lt;p&gt;以下是指针的简单例子：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 定义一个指针变量，且只能指向char类型
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 让指针变量b指向a
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这里的*b代表：访问b中存储的地址对应的存储空间
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;zlx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 定义了一个字符串变量
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;zlx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 定义了一个字符串常量
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;函数名就代表内存地址，所以指针也是可以指向函数的。
+``` c
+int sum(int a, int b) {
+    return 0;
+}&lt;/p&gt;
+
+&lt;p&gt;int main() {
+    // 定义了一个指向函数的指针变量p
+    // 被p指向的函数返回值为int
+    int (&lt;em&gt;P)(int a, int b);
+    p = sum;
+    (&lt;/em&gt;p)(5, 6) // 调用函数
+    p(5, 6) // 这样调用函数也是可以的
+}
+```&lt;/p&gt;
+
+&lt;p&gt;外部函数用extern修饰，但是默认函数都是外部函数，所以可以不加extern。内部函数用static修饰。c语言中允许有同名的内部函数，但是不允许有同名的外部函数。  &lt;/p&gt;
+
+&lt;p&gt;如果多个源文件中有同名的全局变量（extern），那么它们指向的是同一个变量。如果多个源文件中有同名的内部变量（static），那么它们互不干扰。&lt;/p&gt;
+
+&lt;p&gt;结构体和数组有点类似，但是数组只能存储相同类型的数据，但是结构体能够存储不同类型的数据。结构体和面向对象的类不同，结构体没有方法，只有属性。结构体也可以包含结构体。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 注意这里一定要加分号，这里只是定义了一个结构体，还没有创建内存
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 也可以这么创建
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 也可以这么创建
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 结构体数组
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;c语言中，枚举在实际编译的时候，其实是使用整型进行代替的。&lt;/p&gt;
+
+&lt;p&gt;typedef给类型起别名，也可以给别名再起别名。typedef还可以给指针和结构体起别名。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 19 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/ios/2016/02/19/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
+        <guid isPermaLink="true">/blog/ios/2016/02/19/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
     
       <item>
         <title>使用apktool进行解包和重新打包</title>
@@ -29,9 +222,9 @@ jarsigner -verbose -keystore keystore.jks -signedjar xxx_signed.apk xxx_unsigned
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;执行签名文件后会提示输入对应alias的密码，之后显示正在签名，最后就生成apk了。&lt;/p&gt;
 </description>
-        <pubDate>Thu, 11 Feb 2016 00:00:00 +0800</pubDate>
-        <link>/blog/android/2016/02/11/%E4%BD%BF%E7%94%A8apktool%E8%BF%9B%E8%A1%8C%E8%A7%A3%E5%8C%85%E5%92%8C%E9%87%8D%E6%96%B0%E6%89%93%E5%8C%85.html</link>
-        <guid isPermaLink="true">/blog/android/2016/02/11/%E4%BD%BF%E7%94%A8apktool%E8%BF%9B%E8%A1%8C%E8%A7%A3%E5%8C%85%E5%92%8C%E9%87%8D%E6%96%B0%E6%89%93%E5%8C%85.html</guid>
+        <pubDate>Thu, 18 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/android/2016/02/18/%E4%BD%BF%E7%94%A8apktool%E8%BF%9B%E8%A1%8C%E8%A7%A3%E5%8C%85%E5%92%8C%E9%87%8D%E6%96%B0%E6%89%93%E5%8C%85.html</link>
+        <guid isPermaLink="true">/blog/android/2016/02/18/%E4%BD%BF%E7%94%A8apktool%E8%BF%9B%E8%A1%8C%E8%A7%A3%E5%8C%85%E5%92%8C%E9%87%8D%E6%96%B0%E6%89%93%E5%8C%85.html</guid>
         
         
         <category>Android</category>
