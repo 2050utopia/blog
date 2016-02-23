@@ -5,9 +5,113 @@
     <description>遇风尘之会，必有凌霄之志</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Feb 2016 09:35:13 +0800</pubDate>
-    <lastBuildDate>Mon, 22 Feb 2016 09:35:13 +0800</lastBuildDate>
+    <pubDate>Tue, 23 Feb 2016 16:44:39 +0800</pubDate>
+    <lastBuildDate>Tue, 23 Feb 2016 16:44:39 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>OC语言学习笔记</title>
+        <description>&lt;p&gt;学习iOS开发前的OC语言基础学习笔记。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;OC是没有包名的概念的，取而代之是给类名加上前缀防止命名冲突，比如NSString的NS。OC中的关键字都是以@开头。语法要点如下：&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;项目&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;简介&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;基本数据类型&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;char、int、float、double、BOOL（YES\NO）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;nil&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;相当于Java中的null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;self&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;相当于Java中的this&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;基本语句&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;循环语句（do while、while、for）、条件语句（if、if-else、switch）、goto语句&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;for循环快速遍历&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;for (xx in xx)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;基类&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;NSObject&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;继承&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;单继承，用super关键字引用父类对象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;异常处理&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;@try @catch @finally&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;注释&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;// 和 /*...*/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;日志输出&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;NSLog(@&amp;quot;Hello&amp;quot;); NSLog(@&amp;quot;age is %d&amp;quot;, 27);&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;#import和#include的不同在于#import会自动检查有没重复导入，而#include不会。&lt;/p&gt;
+
+&lt;p&gt;.h文件中@interface代表申明一个类，: 代表继承一个类。 - 号代表动态方法，+ 号代表静态方法。.h文件中申明的方法都是公共方法（public）。&lt;/p&gt;
+
+&lt;p&gt;OC中的任何对象都是指针形式的，比如Student *stu。OC中的点语法示例如下：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-oc&quot; data-lang=&quot;oc&quot;&gt;person.age = 10; // 相当于[person setAge:10];
+int age = person.age; // 相当于int age = [person age];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OC中定义成员变量，推荐使用下划线开头，如int &lt;em&gt;age。NSLog中的%@是打印一个OC对象。在动态方法里面调用self代表的是实例对象，在静态方法里面调用self代表的是类名。@property用在.h文件中申明get和set方法，@synthesize用在.m文件中实现get和set方法。@synthesize age默认会去访问age的同名变量，若没有该变量则生成一个同名的私有变量。@synthesize age = _age会去访问&lt;/em&gt;age的同名变量，若没有该变量则生成一个同名的私有变量。在Xcode 4.5之后，当检测到.h文件中有@property后，可以不在.m文件中使用@synthesize，Xcode会自动生成get方法和set方法。&lt;/p&gt;
+
+&lt;p&gt;当OC对象被回收的时候，会自动调用dealloc方法，在这里我们会做一些自己的资源释放的工作。但是不要主动手动调用dealloc方法。&lt;/p&gt;
+
+&lt;p&gt;NSLog(@&amp;quot;&amp;amp;zi&amp;quot;, 1);这里的z代表无符号。&lt;/p&gt;
+
+&lt;p&gt;.h文件中如果是继承一个类，这个类的h文件必须import进来，否则若只是定义成员变量和属性，则直接使用@class提高效率。&lt;/p&gt;
+
+&lt;p&gt;@property(retain)会自动生成内存管理的set方法。@property(getter = isRich)这个方法用来重命名getter方法，多用于bool变量。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-oc&quot; data-lang=&quot;oc&quot;&gt;@protocol BtnDelegate &amp;lt;NSObject&amp;gt; // &amp;lt;&amp;gt;代表实现，这里protocol类似java中的interface
+
+@end
+
+[delegate respondsToSelector:@selector(onClick:)] // 判断某个protocol是否实现了它的某个方法，selector理解为方法的意思，onClick:是方法名
+[delegate conformsToProtocol:@protocol(Study)] // 判断某个类是否实现了某个协议，Study是协议名
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;声明一个block的代码，注意声明block时，block变量是没有*号的：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-oc&quot; data-lang=&quot;oc&quot;&gt;int (^Sum) (int, int) = ^(int a, int b) {
+    return a + b;
+}
+
+typedef int (^Sum) (int, int) // 通过typedef声明一个block
+int c = 5;
+__block int d = 6; // 这里的d变量在block中既可以读取也可以改变
+Sum sum = ^(int a, int b) { // 通过typedef声明的block可以当作变量一样使用
+    NSLog(@&quot;%i&quot;, c); // 这里读取block外面的c变量是可以的，但是不能改变它的值
+    return a + b;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;NSString在@property声明的时候推荐使用copy，不让外边值的改变影响NSString。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/ios/2016/02/22/OC%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
+        <guid isPermaLink="true">/blog/ios/2016/02/22/OC%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
     
       <item>
         <title>C语言学习笔记</title>
@@ -672,192 +776,6 @@ bash &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/gradlew clean buil
         
         
         <category>team</category>
-        
-      </item>
-    
-      <item>
-        <title>Android多屏适配（一）：理论知识</title>
-        <description>&lt;h3&gt;一、每英寸点数量（dpi）与每英寸像素量（ppi）&lt;/h3&gt;
-
-&lt;p&gt;Android多屏适配同时受到屏幕尺寸（屏幕对角线长度，单位：英寸）与屏幕分辨率的影响，即屏幕密度。屏幕密度的常见度量单位有dpi（dot per inch）与ppi（pixel per inch），两者的区别在于dpi用于打印领域，而ppi用于图像领域。在日常使用中我们经常混用了dpi和ppi，在很多情况下我们使用dpi时其实指的是ppi。为了更好地理解以下内容，可先阅读这篇博文（&lt;a href=&quot;http://blog.jeswang.org/blog/2013/08/07/ppi-vs-dpi-you-shi-yao-qu-bie/&quot;&gt;PPI vs DPI 有什么区别&lt;/a&gt;）。在Android系统中dpi和ppi具有不同的含义。现在假设分辨率宽度为w；分辨率高度为h；屏幕尺寸为ss；则ppi计算公式如下：&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;$$ppi=\frac{\sqrt{w^2 + h^2}}{ss}$$但是通过此公式算出的ppi与通过Android API获取的dpi存在一定差异，以Nexus5（分辨率：1920 x 1080，4.95英寸）为例，通过上述公式得到的ppi为445，而通过API得到的dpi为480。通过Android Studio创建模拟器，调整不同的分辨率及屏幕尺寸进行验证后得到下表：  &lt;/p&gt;
-
-&lt;table&gt;&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;Actual ppi&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;API dpi&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;API density&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;ldpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;0 ~ 140&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;120&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;0.75&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;mdpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;140 ~ 186.5&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;160&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;1.0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;tvdpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;186.5 ~ 226.5&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;213&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;1.33&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;hdpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;226.5 ~ 280&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;240&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;1.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;xhdpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;280 ~ 360&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;320&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;2.0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;400dpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;360 ~ 440&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;400&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;2.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;xxhdpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;440 ~ 520&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;480&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;3.0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;560dpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;520 ~ 600&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;560&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;3.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;xxxhdpi&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;600 ~ 680&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;640&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;4.0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-&lt;p&gt;从上表可知，Android系统的dpi是对应某个范围的ppi，范围界限是相邻两个dpi的中值。例如ldpi与mdpi的中值为140，那么ppi低于140的设备就属于ldpi，ppi高于140的设备就属于mdpi。这就解释了Nexus5的实际ppi为445但却属于xxhdpi的现象。个人推测由于各个Android设备厂商的屏幕标准不统一，Android系统为了能够兼容各个设备而采用了这种机制。dpi中的d（dot）在物理屏幕上可以理解为一个光学元件（通常由RGB组成）。以mdpi为例，当一个设备的ppi为160时，那么其dpi也为160，这时屏幕将会使用一个光学元件来显示一个像素。当一个设备的ppi为150时，那么其dpi依旧为160，但是这时屏幕将会使用16个光学元件来显示15个像素，即160 dot比150 pixel。在实际开发中，Android系统的数值换算使用的是dpi，而非ppi。所以不必太纠结于dpi与ppi的区别。  &lt;/p&gt;
-
-&lt;p&gt;值得注意的是，上表中有三个奇葩的dpi，分别是tvdpi、400dpi和560dpi。第一代Nexus7使用tvdpi，魅族MX3使用400dpi，Nexus6使用560dpi。目前使用ldpi的设备已经是古董机了，基本可以忽略此类设备。优先兼容普遍dpi类型的设备，其次建议兼容400dpi和560dpi的设备，tvdpi的适配工作视实际情况而定。&lt;/p&gt;
-
-&lt;h3&gt;二、密度独立像素（dp/dip）与缩放独立像素（sp）&lt;/h3&gt;
-
-&lt;p&gt;dp/dip的全称是：density-independent pixel，中文有时也称为设备独立像素，通常用于UI布局。sp的全称是：scale-independent pixels，通常用于指定文字大小。dp与sp是Google推荐的度量单位，单位px（像素）出于多屏适配的原因不推荐使用。dp的定义是：1dp等于160dpi屏幕上的1px，则dp与px的换算公式为：$$px=dp*\frac{dpi}{160}$$sp的定义与dp类似，指的是：1sp等于160dpi屏幕上的1px乘以系统的文本缩放系数，文本缩放系数可以在“设置应用”的“显示”条目中的“字体大小”项里更改。接着通过实例说明为什么使用dp和sp，而不用px。假设要实现一个如图的界面：  &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/images/2015/04/01/01.png&quot; alt=&quot;image&quot;&gt;   &lt;/p&gt;
-
-&lt;p&gt;使用px的布局示例如下：  &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;horizontal&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/darker_gray&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100px&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100px&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/ic_zlx&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;昵称：zlxRX&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:textSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18px&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/holo_orange_dark&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在mdpi和xhdpi的模拟器中分别得到如下界面。设置相同像素值的宽高，xhdpi中的图片只有mdpi中的一半大小。这是因为xhdpi的dpi值为320，而mdpi的dpi值为160。从上文可知，dpi对应的ppi是一个范围值，为了便于理解，假设此时dpi和ppi的值相同。那么mdpi要显示一个160像素x160像素的图像需要1英寸x1英寸的区域（160像素 / 1英寸 ＝ 160ppi），而xhdpi只需要0.5英寸x0.5英寸的区域（160像素 / 0.5英寸 ＝ 320ppi）。  &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/images/2015/04/01/02.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
-
-&lt;p&gt;如果我们使用dp和sp进行布局，则在mdpi和xhdpi的模拟器中分别得到如下界面。  &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;horizontal&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/darker_gray&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/ic_zlx&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;昵称：zlxRX&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:textSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18sp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/holo_orange_dark&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/2015/04/01/03.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
-
-&lt;p&gt;当我们使用dp和sp时系统会自动根据当前设备的dpi将dp和sp转换为px后再布局，保证我们的应用程序在不同dpi的设备上能有比较相近的显示效果。Google推荐四种字体大小：12sp，14sp，16sp，18sp。当系统的文本缩放系数为1时，sp与px的转换关系如下表所示。&lt;/p&gt;
-
-&lt;table&gt;&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;mdpi&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;hdpi&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;xhdpi&lt;/th&gt;
-&lt;th style=&quot;text-align: left&quot;&gt;xxhdpi&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;12sp&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;12px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;18px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;24px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;36px&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;14sp&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;14px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;21px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;28px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;42px&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;16sp&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;16px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;24px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;32px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;48px&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;18sp&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;18px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;27px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;36px&lt;/td&gt;
-&lt;td style=&quot;text-align: left&quot;&gt;54px&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-&lt;p&gt;虽然在开发中推荐使用sp，但UX工程师在设计或切图标注时一般使用的还是px，上表的意义在于可以与UX工程师约定在APP中只使用若干种字号，并结合上表将切图标注中以px为单位的字号转换为代码中以sp为单位的字号。&lt;/p&gt;
-
-&lt;script src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;
-</description>
-        <pubDate>Wed, 01 Apr 2015 00:00:00 +0800</pubDate>
-        <link>/blog/android/2015/04/01/Android%E5%A4%9A%E5%B1%8F%E9%80%82%E9%85%8D-%E4%B8%80-%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86.html</link>
-        <guid isPermaLink="true">/blog/android/2015/04/01/Android%E5%A4%9A%E5%B1%8F%E9%80%82%E9%85%8D-%E4%B8%80-%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86.html</guid>
-        
-        
-        <category>Android</category>
         
       </item>
     

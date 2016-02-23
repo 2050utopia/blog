@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        OC语言学习笔记 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">OC语言学习笔记</h2>
+        <div><p>学习iOS开发前的OC语言基础学习笔记。</p>
+
+<!-- more -->
+
+<p>OC是没有包名的概念的，取而代之是给类名加上前缀防止命名冲突，比如NSString的NS。OC中的关键字都是以@开头。语法要点如下：</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">项目</th>
+<th style="text-align: left">简介</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">基本数据类型</td>
+<td style="text-align: left">char、int、float、double、BOOL（YES\NO）</td>
+</tr>
+<tr>
+<td style="text-align: left">nil</td>
+<td style="text-align: left">相当于Java中的null</td>
+</tr>
+<tr>
+<td style="text-align: left">self</td>
+<td style="text-align: left">相当于Java中的this</td>
+</tr>
+<tr>
+<td style="text-align: left">基本语句</td>
+<td style="text-align: left">循环语句（do while、while、for）、条件语句（if、if-else、switch）、goto语句</td>
+</tr>
+<tr>
+<td style="text-align: left">for循环快速遍历</td>
+<td style="text-align: left">for (xx in xx)</td>
+</tr>
+<tr>
+<td style="text-align: left">基类</td>
+<td style="text-align: left">NSObject</td>
+</tr>
+<tr>
+<td style="text-align: left">继承</td>
+<td style="text-align: left">单继承，用super关键字引用父类对象</td>
+</tr>
+<tr>
+<td style="text-align: left">异常处理</td>
+<td style="text-align: left">@try @catch @finally</td>
+</tr>
+<tr>
+<td style="text-align: left">注释</td>
+<td style="text-align: left">// 和 /*...*/</td>
+</tr>
+<tr>
+<td style="text-align: left">日志输出</td>
+<td style="text-align: left">NSLog(@&quot;Hello&quot;); NSLog(@&quot;age is %d&quot;, 27);</td>
+</tr>
+</tbody></table>
+
+<p>#import和#include的不同在于#import会自动检查有没重复导入，而#include不会。</p>
+
+<p>.h文件中@interface代表申明一个类，: 代表继承一个类。 - 号代表动态方法，+ 号代表静态方法。.h文件中申明的方法都是公共方法（public）。</p>
+
+<p>OC中的任何对象都是指针形式的，比如Student *stu。OC中的点语法示例如下：</p>
+<div class="highlight"><pre><code class="language-oc" data-lang="oc">person.age = 10; // 相当于[person setAge:10];
+int age = person.age; // 相当于int age = [person age];
+</code></pre></div>
+<p>OC中定义成员变量，推荐使用下划线开头，如int <em>age。NSLog中的%@是打印一个OC对象。在动态方法里面调用self代表的是实例对象，在静态方法里面调用self代表的是类名。@property用在.h文件中申明get和set方法，@synthesize用在.m文件中实现get和set方法。@synthesize age默认会去访问age的同名变量，若没有该变量则生成一个同名的私有变量。@synthesize age = _age会去访问</em>age的同名变量，若没有该变量则生成一个同名的私有变量。在Xcode 4.5之后，当检测到.h文件中有@property后，可以不在.m文件中使用@synthesize，Xcode会自动生成get方法和set方法。</p>
+
+<p>当OC对象被回收的时候，会自动调用dealloc方法，在这里我们会做一些自己的资源释放的工作。但是不要主动手动调用dealloc方法。</p>
+
+<p>NSLog(@&quot;&amp;zi&quot;, 1);这里的z代表无符号。</p>
+
+<p>.h文件中如果是继承一个类，这个类的h文件必须import进来，否则若只是定义成员变量和属性，则直接使用@class提高效率。</p>
+
+<p>@property(retain)会自动生成内存管理的set方法。@property(getter = isRich)这个方法用来重命名getter方法，多用于bool变量。</p>
+<div class="highlight"><pre><code class="language-oc" data-lang="oc">@protocol BtnDelegate &lt;NSObject&gt; // &lt;&gt;代表实现，这里protocol类似java中的interface
+
+@end
+
+[delegate respondsToSelector:@selector(onClick:)] // 判断某个protocol是否实现了它的某个方法，selector理解为方法的意思，onClick:是方法名
+[delegate conformsToProtocol:@protocol(Study)] // 判断某个类是否实现了某个协议，Study是协议名
+</code></pre></div>
+<p>声明一个block的代码，注意声明block时，block变量是没有*号的：</p>
+<div class="highlight"><pre><code class="language-oc" data-lang="oc">int (^Sum) (int, int) = ^(int a, int b) {
+    return a + b;
+}
+
+typedef int (^Sum) (int, int) // 通过typedef声明一个block
+int c = 5;
+__block int d = 6; // 这里的d变量在block中既可以读取也可以改变
+Sum sum = ^(int a, int b) { // 通过typedef声明的block可以当作变量一样使用
+    NSLog(@"%i", c); // 这里读取block外面的c变量是可以的，但是不能改变它的值
+    return a + b;
+}
+</code></pre></div>
+<p>NSString在@property声明的时候推荐使用copy，不让外边值的改变影响NSString。</p>
+</div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>
