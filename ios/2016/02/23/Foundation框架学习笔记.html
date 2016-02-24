@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="zhenglingxiao">
+
+    <title>
+        Foundation框架学习笔记 &middot; Coture
+    </title>
+
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/blog/favicon.ico">
+    <!-- 苹果设备将网页添加至主屏幕时的ICON -->
+    <link rel="apple-touch-icon-precomposed" href="/blog/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+
+<div class='site-header'>
+    <div class="container">
+        <a href="/blog/"><img class="logo" src="/blog/images/logo.png"></a>
+        <a class='title' href="/blog/">Coture</a>
+        <span class='description right'>遇风尘之会，必有凌霄之志</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-container">
+    <div class="markdown-body">
+        <h2 class="post-title">Foundation框架学习笔记</h2>
+        <div><p>学习iOS开发前的Foundation框架基础学习笔记。</p>
+
+<!-- more -->
+
+<p>使用NSArray时，初始化数组添加的最后一个nil表示数组终结，不计入数组的count。如果往NSArray中加入对象的时候，NSArray会自动retain一次对象，当数组释放的时候会自动释放其中的对象，不需要我们手动进行内存管理。</p>
+<div class="highlight"><pre><code class="language-oc" data-lang="oc">char *type = @encode(Date) // 根据类型生成类型名称，这里Date是一个结构体
+</code></pre></div>
+<p>NSNull的作用在于要在数组添加一个空数据时不能用nil，而要用NSNull。如果是解析json到dictionary那么如果json中有null，这是不会解析成NSNull或者nil，而是直接就不存在该key-value。</p>
+
+<p>NSClassFromString(@&quot;Person&quot;)这是OC语法中的反射使用方法。</p>
+</div>
+    </div>
+</div>
+
+
+    <div class="site-footer">
+        <ul class="site-footer-links right">
+            <li><a href="https://github.com/zlxricky/blog">GitHub</a></li>
+            <li><a href="/blog/about">About</a></li>
+            <li><a href="/blog/feed.xml">RSS</a></li>
+        </ul>
+
+        <img src="/blog/images/logo.png"/>
+
+        <ul class="site-footer-links">
+            <li>© 2016 ZhengLingxiao</li>
+            <li>Powered by Jekyll & Primer</li>
+        </ul>
+    </div>
+</div>
+
+<script src="/blog/js/anchor.min.js"></script>
+<!--
+<script>
+    var selector = '.markdown-body h2, .markdown-body h3';
+    anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+    };
+    anchors.add(selector);
+</script>
+-->
+</body>
+</html>
