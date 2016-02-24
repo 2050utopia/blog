@@ -5,9 +5,106 @@
     <description>遇风尘之会，必有凌霄之志</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Feb 2016 16:44:39 +0800</pubDate>
-    <lastBuildDate>Tue, 23 Feb 2016 16:44:39 +0800</lastBuildDate>
+    <pubDate>Wed, 24 Feb 2016 10:56:26 +0800</pubDate>
+    <lastBuildDate>Wed, 24 Feb 2016 10:56:26 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Android 6.0下使用Gson出现Can&#39;t make field constructor accessible的解决方案</title>
+        <description>&lt;p&gt;在Android 6.0上使用Gson某些情况下会出现：Can&amp;#39;t make field constructor accessible的错误，经典的场景是ActiveAndroid和Gson配合使用，当使用Gson解析继承自ActiveAndroid的Model类的class时就会报此错误。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;假设我们创建以下代码，运行会出现此错误。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.lang.reflect.Field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这行挂掉了&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;{\&quot;name\&quot;: \&quot;zhenglingxiao\&quot;, \&quot;age\&quot;: 25}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Gson&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gson&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Gson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fromJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sxy&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;｝&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这里挂掉的原因是在Student类中有一个Field变量，Field在序列化/反序列化时出现了错误，定位到的代码是java.lang.reflect.Constructor。那么为什么当对Field进行序列化/反序列化时会报错呢？在这个过程中Constructor究竟背地里背着我们都干了什么？数百头母驴为何半夜惨叫？小卖部安全套为何屡遭黑手？女生宿舍内裤为何频频失窃？连环强奸母猪案，究竟是何人所为？老尼姑的门夜夜被敲，究竟是人是鬼？数百只小母狗意外身亡的背后又隐藏着什么？这一切的背后， 是人性的扭曲还是道德的沦丧？是性的爆发还是饥渴的无奈？让我们接着看代码。&lt;/p&gt;
+
+&lt;p&gt;其实在Gson内部进行解析json时必须是用到反射机制了，而Constructor的setAccessible方法是这样定义的：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setAccessible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;declaringClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getDeclaringClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;declaringClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SecurityException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Can&#39;t make class constructor accessible&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;declaringClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SecurityException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Can&#39;t make field constructor accessible&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;declaringClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SecurityException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Can&#39;t make method constructor accessible&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAccessible&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;看来原因已经很明显了，这里是不让你反射反射库的类。这里的Constructor是Android SDK内部集成的，不是原生JDK中的。当然其实很多类库也会使用反射机制，用到Field的情况就很难避免了。比如ActiveAndroid的Model类中有个TableInfo的变量，TableInfo类中又有一个Map&lt;Field, String&gt;变量，这样就导致出现了这个错误。那么如何避免呢？其实使用transient关键字即可，transient关键字的作用在于标示某个变量不进行序列化/反序列化。Student类修改为这样即可。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;transient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这行不会挂掉了&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当然考虑到ActiveAndroid基本已经停止维护了，所以只能自己改代码了。当然有时这样改开源代码也是很蛋疼的，给后期维护也带来一定的工作量。还可以使用Gson的ExclusionStrategy这样处理。当处理到Field或者Method类的时候就不进行序列化和反序列化。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;{\&quot;name\&quot;: \&quot;Ricky\&quot;, \&quot;age\&quot;: 25}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;ExclusionStrategy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclusionStrategy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ExclusionStrategy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shouldSkipField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FieldAttributes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fieldAttributes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shouldSkipClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clazz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clazz&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clazz&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Gson&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gson&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GsonBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addSerializationExclusionStrategy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exclusionStrategy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addDeserializationExclusionStrategy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exclusionStrategy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Student is a simple class extends com.activeandroid.Model&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fromJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;students&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;students&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;zlx&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&#39;s age: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Wed, 24 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/blog/android/2016/02/24/Android-6.0%E4%B8%8B%E4%BD%BF%E7%94%A8Gson%E5%87%BA%E7%8E%B0Can't-make-field-constructor-accessible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</link>
+        <guid isPermaLink="true">/blog/android/2016/02/24/Android-6.0%E4%B8%8B%E4%BD%BF%E7%94%A8Gson%E5%87%BA%E7%8E%B0Can't-make-field-constructor-accessible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</guid>
+        
+        
+        <category>Android</category>
+        
+      </item>
     
       <item>
         <title>OC语言学习笔记</title>
@@ -662,7 +759,7 @@ git remote prune origin // 将无效的分支删除
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;二、GreenDAO源码分析&lt;/h3&gt;
 
-&lt;p&gt;为什么当schema的版本号更新后会导致数据丢失呢？在更新apk的时候GreenDAO究竟背地里背着我们都干了什么？数百头母驴为何半夜惨叫？小卖部安全套为何屡遭黑手？女生宿舍内裤为何频频失窃？连环强奸母猪案，究竟是何人所为？老尼姑的门夜夜被敲，究竟是人是鬼？数百只小母狗意外身亡的背后又隐藏着什么？这一切的背后， 是人性的扭曲还是道德的沦丧？是性的爆发还是饥渴的无奈？让我们接着看代码。&lt;/p&gt;
+&lt;p&gt;为什么当schema的版本号更新后会导致数据丢失呢？让我们接着看代码。&lt;/p&gt;
 
 &lt;p&gt;主要是在初始化数据库操作的这一句代码&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;DaoMaster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DevOpenHelper&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DaoMaster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DevOpenHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dbName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -677,105 +774,6 @@ git remote prune origin // 将无效的分支删除
         
         
         <category>Android</category>
-        
-      </item>
-    
-      <item>
-        <title>Ubuntu下搭建Jenkins+vsftpd+Git+Gradle的Android自动编译平台</title>
-        <description>&lt;p&gt;在实际软件工作中，涉及研发、测试、产品经理等多个职位的配合。时常会出现测试人员向研发要测试软件，产品经理想要体验软件向研发要最新软件，产品临时发样向研发人员要发样软件，如此之类的需求时常打断研发的工作。有时开发的过程中，测试人员发现了一个bug，进一步测试发现之前的代码中也存在这个bug，之前发出去的软件也存在这个bug，然后就开始了痛苦的代码回溯及编译APK验证测试。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;因此需要一个自动软件编译平台来解决以上问题，这个平台每天凌晨自动编译一版本APK，所有需要APK的人员都可以登上FTP服务器获取，无需打断研发的工作。当回溯bug时只需要测试每天编译出来的APK就能很快定位到是哪次代码提交导致的问题。本文使用Jenkins自动编译平台，vsftpd搭建FTP服务器，Git作为代码管理工具，使用Gradle编译APK，详细软件版本信息如下：  &lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ubuntu：14.04&lt;br&gt;
-vsftpd：3.0.2&lt;br&gt;
-java：1.8.0_60&lt;br&gt;
-jenkins：1.609.3&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt;一、安装配置Jenkins&lt;/h3&gt;
-
-&lt;p&gt;从&lt;a href=&quot;https://jenkins-ci.org&quot;&gt;官网&lt;/a&gt;下载Jenkins的deb安装包，虽然也能从命令行安装，但deb的安装方式更加简便。需要注意的是，有时首页的下载按钮会显示不出来，所以建议翻墙访问。安装完成后建议重启。然后打开浏览器：http://127.0.0.1:8080/ ，若能正常显示jenkins界面，则说明安装成功  &lt;/p&gt;
-
-&lt;p&gt;点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;管理插件&amp;quot;，再选择&amp;quot;可选插件&amp;quot;选项卡，此时会列出所有可以安装的插件。在顶部的过滤对话框输入GIT plugin，选择GIT plugin进行安装。除了安装GIT plugin，可能还会自动安装其他关联的插件。建议先翻墙再进行此步操作，否则可能加载不出插件列表  &lt;/p&gt;
-
-&lt;p&gt;安装jdk，假设安装到的路径为/usr/lib/java/jdk1.8.0&lt;em&gt;60，然后设置JAVA&lt;/em&gt;HOME等环境变量，网上有很多教程，不再赘述。点击右侧&amp;quot;系统管理&amp;quot;后选择&amp;quot;系统设置&amp;quot;，点击“JDK安装”下的新增JDk。不要勾选自动安装，填写“别名”和“JAVA&lt;em&gt;HOME”，“别名”可以随便写，“JAVA&lt;/em&gt;HOME”写/usr/lib/java/jdk1.8.0_60。点击底部保存，保存所有修改  &lt;/p&gt;
-
-&lt;h3&gt;二、为Jenkins添加ssh私钥&lt;/h3&gt;
-
-&lt;p&gt;jenkins在安装完成后，默认会创建一个jenkins账户，其根目录为/var/lib/jenkins。若在jenkins上使用git拉代码，则需要添加相应ssh私钥。先准备好可以在git上拉代码的私钥id_rsa。在/var/lib/jenkins目录下新建.ssh文件夹。将id_rsa复制到/var/lib/jenkins/.ssh。这一步非常重要，使用以下命令更改id_rsa的权限。修改完成后，id_rsa的权限为：&lt;br&gt;
-- r w - - - - - - - 1 jenkins jenkins /var/lib/jenkins/.ssh/id_rsa&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sudo chmod 600 id_rsa
-sudo chgrp jenkins id_rsa
-sudo chown jenkins id_rsa
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;三、下载配置Android SDK Tools&lt;/h3&gt;
-
-&lt;p&gt;从Android官网下载SDK Tools，不需要下载整个Android Studio。下载完成后解压放置到/usr/local/android-sdk目录。启动SDK Tools，下载相应的android版本和编译工具，网上有很多教程，不再赘述。添加ANDROID_HOME环境变量，这个环境变量是jenkins通过gradle编译apk时需要用到的，考虑到ubuntu上的其他用户也要用到此环境变量，故添加为全局环境变量，在/etc/environment文件末尾加上export ANDROID_HOME=/usr/local/android-sdk。完成之后重新系统让环境变量生效&lt;/p&gt;
-
-&lt;h3&gt;四、创建配置一个Jenkins编译项目&lt;/h3&gt;
-
-&lt;p&gt;打开浏览器：http://127.0.0.1:8080/ ，选择“创建一个新任务”，再选择“构建一个自由风格的软件项目”并填写“Item名称”，这里给一个参考格式：项目名-nightly。点击OK后进入配置页面。选择配置页面的“源码管理”下的Git，在Repository URL后填写代码的git地址，若jenkins无法通过此地址获取代码，那么稍等几秒界面上就会有红色的错误提示。Branches to build是用来指定要编译的分支名，默认是指向master的。点击“构建”下的“增加构建步骤”并选择Execute shell，在Command后面写gradle的编译命令及其他的shell脚本。此时先不写gradle的编译脚本，只写：echo hello!!!，因为jenkins执行自动编译是有超时时间的，在使用gradle编译apk时会先下载对应版本的gradle，在国内的下载速度是很慢的，经常会超过jenkins的编译超时时间，故需要单独初始化下载gradle。点击页面底部的保存按钮，完成配置。点击左侧的立即构建，开始第一次自动编译，点击“#1”进入详细页面，点击“Console Output”，查看实时的编译输出。当最后输出Finished: SUCCESS说明编译成功。此时jenkins已经将对应的代码拉到指定的目录了&lt;/p&gt;
-
-&lt;h3&gt;五、初始化下载gradle&lt;/h3&gt;
-
-&lt;p&gt;jenkins的所有自动编译项目都在/var/lib/jenkins/jobs目录下，假设此时的项目名称为test-nightly，那么源码所在的目录为/var/lib/jenkins/jobs/test-nightly/workspace。运行以下命令，初始化下载项目对应的gradle，之所以在这里执行，是因为既可以不受jenkins编译超市时间的限制，又可以看到实时的下载进度，建议翻墙后再执行以下操作，以免出现无法下载的情况。当执行完以下命令，出现BUILD SUCCESSFUL时说明操作成功&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sudo su jenkins &lt;span class=&quot;c&quot;&gt;# 切换到jenkins账户，这里会要求输入密码，输入的是你当前帐户的密码，而不是jenkins账户的密码&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /var/lib/jenkins/jobs/test_night/workspace &lt;span class=&quot;c&quot;&gt;# 进入源码目录&lt;/span&gt;
-./gradlew clean &lt;span class=&quot;c&quot;&gt;# 开始初始化下载gradle&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;六、完善Jenkins自动编译配置&lt;/h3&gt;
-
-&lt;p&gt;打开浏览器：http://127.0.0.1:8080/ ，进入项目test-nightly的配置界面，勾选“构建触发器”下的Build periodically，此项是用来指定jenkins每日自动构建的时间点的。比如指定需要在每天凌晨5点到6点之间的随机事件点执行一次自动编译，那么填写：H 5 * * *，这里有五个参数，参数之间通过空格分割。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;第一个参数代表分钟，取值范围：0~59&lt;br&gt;
-第二个参数代表的是小时，取值范围：0~23&lt;br&gt;
-第三个参数代表的是天，取值范围：1~31&lt;br&gt;
-第四个参数代表的是月，取值范围：1~12&lt;br&gt;
-第五个参数代表的是星期，取值范围：0~7，0和7都是表示星期天&lt;br&gt;
-*代表任意值，H代表该参数值域内的任意值&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在Execute shell的Command处将之前的echo hello!!!改为以下脚本。保存后执行立即构建，出现BUILD SUCCESSFUL时说明操作成功。此时/var/lib/jenkins/build_release目录下已经有相应的子目录和apk了  &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;APP_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;-nightly
-&lt;span class=&quot;nv&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;date &lt;span class=&quot;s2&quot;&gt;&quot;+%y-%m-%d&quot;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-bash &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/gradlew clean build &lt;span class=&quot;c&quot;&gt;# 编译apk&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/build_release/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;APP_NAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$DATE&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; ! -d &lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then
-&lt;/span&gt;mkdir -p &lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi
-&lt;/span&gt;mv &lt;span class=&quot;nv&quot;&gt;$WORKSPACE&lt;/span&gt;/app/build/outputs/apk/app-release.apk &lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;APP_NAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BUILD_NUMBER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.apk
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;七、搭建FTP服务器&lt;/h3&gt;
-
-&lt;p&gt;搭建FTP服务器使用的是vsftpd，运行以下命令安装vsftpd  &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sudo apt-get install vsftpd
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;运行以下命令判断vsftpd是否安装成功并且已经启动  &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sudo service vsftpd restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;新建文件/etc/vsftpd.chroot&lt;em&gt;list和/etc/vsftpd.user&lt;/em&gt;list，分别写上支持ftp登陆的账户名，比如我的ubuntu系统用户名是zhenglingxiao，就分别填写zhenglingxiao。这两个文件支持填写多个用户名，每行一个用户名，所以也可以建立专用的ftp用户。vsftpd的配置文件是/etc/vsftpd.conf，在文件末尾加上如下配置信息&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# 设置FTP登陆后转向的文件目录，这个目录是我们之前配置的jenkins编译后放置apk的目录&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;local_root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/var/lib/jenkins/build_release/
-&lt;span class=&quot;c&quot;&gt;# 设置只有/etc/vsftpd.user_list中的用户才有登录FTP的权限&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;userlist_enable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes
-&lt;span class=&quot;nv&quot;&gt;userlist_deny&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;NO
-&lt;span class=&quot;nv&quot;&gt;userlist_file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/etc/vsftpd.user_list
-&lt;span class=&quot;c&quot;&gt;# 设置/etc/vsftpd.chroot_list中的用户在登陆FTP后只能查看本目录下的子目录和文件&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;chroot_list_enable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YES
-&lt;span class=&quot;nv&quot;&gt;chroot_list_file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/etc/vsftpd.chroot_list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在浏览器输入：ftp://服务器IP地址，会跳出登录窗口，登录后就能看到jenkins编译出来的apk了&lt;/p&gt;
-</description>
-        <pubDate>Wed, 23 Sep 2015 00:00:00 +0800</pubDate>
-        <link>/blog/team/2015/09/23/Ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAJenkins-vsftpd-Git-Gradle%E7%9A%84Android%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%B9%B3%E5%8F%B0.html</link>
-        <guid isPermaLink="true">/blog/team/2015/09/23/Ubuntu%E4%B8%8B%E6%90%AD%E5%BB%BAJenkins-vsftpd-Git-Gradle%E7%9A%84Android%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%B9%B3%E5%8F%B0.html</guid>
-        
-        
-        <category>team</category>
         
       </item>
     
